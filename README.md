@@ -1,7 +1,7 @@
 # OnionSpread
 Load balancing for Tor hidden services.
 
-Currently under development, only supports v2, working on v3.
+Currently under development. Only supports v2 for now, but working on v3.
 
 ### Configuration:
 
