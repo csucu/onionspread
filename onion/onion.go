@@ -218,8 +218,6 @@ func (o *Onion) multiDescriptorGenerateAndPublish(backendDescriptors []descripto
 		}
 	}
 
-	//  todo: maybe add a check to see if we have failed to post any descriptors to any of the hsdirs and return err?
-
 	return nil
 }
 

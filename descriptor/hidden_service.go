@@ -1,11 +1,5 @@
 package descriptor
 
-/*
-	todo:
-		- make generator functions methods of descriptor
-		- prefix errors with "descriptor"
-		- generator functions should probably check for empty inputs etc, and return errors
-*/
 import (
 	"bytes"
 	"crypto"
