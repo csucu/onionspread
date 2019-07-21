@@ -1,0 +1,569 @@
+
+r seele AAoQ1DAR6kkoo19hBAX5K0QztNw QNpJa2dktdn8SvNo30v/2B6s5Ko 2018-08-03 07:40:21 67.161.31.147 9001 0
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=27
+r PutoElQueLee293884 AAwffNL+oHO5EdyUoWAOwvEX3ws 5QplY/hILpnKQmaLY2a0XDQqWPc 2018-08-03 01:31:37 174.127.217.73 55554 0
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=7470
+r CalyxInstitute14 ABG9JIWtRdmE7EFZyI/AZuXjMA4 eWJZzoxXGAIKVXpxz1CVX3Fmvm8 2018-08-02 23:07:12 162.247.74.201 443 80
+s Exit Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=15800
+r UbuntuCore239 ACsCTiSjDxE5gvyxff4FtvOMDHk ZPuLd7UfaBkIzBno5zkv6tFeVm0 2018-08-03 08:10:55 95.236.11.166 40889 0
+s Fast Running V2Dir Valid
+w Bandwidth=14
+r rotor25 ADQsDhVdRULlU5F4iy13nxRXjes DHgwjSpa3DgV3hhtUnT+Oa9YwWU 2018-08-03 00:31:11 79.119.125.238 9001 9030
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=4840
+r torbogen AEHgFQsKMHUGwoY+/J8rfjpSOzY RD29W14z4Y+CDJH3JvF/ZAf+LKA 2018-08-03 02:27:29 91.97.99.29 9001 9030
+s Fast Running V2Dir Valid
+w Bandwidth=976
+r helga AFnZKULbO4TlLrTYfp97GVz00AU HKPWoRYnXa1TqyaNvmO+8OPKSBM 2018-08-03 04:39:47 88.99.216.194 9001 9030
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=359
+r cerebellum AFzFG5SQOaiKiRNaMWPO6dL6JiE 9klBMcrTkJkAv8NNq8eGjF0dfoU 2018-08-03 02:24:40 79.205.90.232 9001 9030
+s Fast Running V2Dir Valid
+w Bandwidth=1050
+r VeespRU2 AHTsqCvVi4uxkJycTyN/2XebI/w Lj3+r6+YYCZYGF9lYOZJA53zHAU 2018-08-02 17:17:20 185.22.172.237 443 80
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=41300
+r Quintex13 AHe8unJE2z5qXtJ0boYXAGZoSIc zNfXPYSRZFhSSz9wHbJ4rckcbg8 2018-08-03 06:43:37 199.249.223.62 443 80
+s Exit Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=2910
+r powertoyou AIuoi8XPytZLWDhuE4gzcfgX4cI he0pXZNCNv28LeRGPO2ewrb0Tn0 2018-08-03 01:40:39 2.137.21.92 9001 9030
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=12200
+r zech1989 AI57cMO0p1ILW+q4Bnq83I5j8f0 2kAQfYu1pCphjYiUqXIw0W+2+hE 2018-08-03 01:12:34 185.243.53.99 9001 9030
+s Fast Guard Running Stable V2Dir Valid
+w Bandwidth=10600
+r jactr AJhR35M3VLAN3odvzkCIzhtJQME gl2bOzZU10QMV/BHkYx19GhNph4 2018-08-02 23:27:16 84.40.112.70 9001 9030
+s Fast Running Stable V2Dir Valid
+w Bandwidth=674
+r Azunyan1111Relay56 AJsSzaUgUPQwhSP68DJ8xtoJPxs 2Ql5e6sQklJ/Tfqbp4Rcm5jVrw0 2018-08-03 03:43:21 150.43.248.235 50066 55066
+s Fast Running V2Dir Valid
+w Bandwidth=935
+r RelayName AKmRWDbWoMySpE6ybskxNmAeaNc mdckI7y7H2ctMVB6EdyONPU3eCw 2018-08-03 07:51:10 62.210.89.35 9001 9030
+s Fast Running Stable V2Dir Valid
+w Bandwidth=14500
+r hozipi ALIqOUZNig9oebg/jlqo4oMPdAw OPLWgggtiD3pFmZc0R8IwH/QFhw 2018-08-03 08:31:59 93.104.187.223 80 110
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=185
+r Unnamed ALPJ+3njaQWlF6SJsFgkZ1mr+8g v8aEHp7qRQ7XUL+Zu2nm7RAFNZg 2018-08-03 06:19:40 80.254.128.45 9001 0
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=26
+r tzBakery AMpwyvB1/f+1nMtyS+QHa6wgwLU ajku9sOQCCq5qQf/uEhLY891X0o 2018-08-02 17:17:11 185.10.68.152 9001 80
+s Exit Fast Running V2Dir Valid
+w Bandwidth=447
+r TinyTorTN ANnVrGWj16GBAI+km0mhtc4Zhhc mAeSVh+zwmp6Y8RTnIk6eMgh4QU 2018-08-02 18:44:55 41.231.53.101 8081 0
+s Fast Running Stable Valid
+w Bandwidth=1400
+r Unnamed APOGQHPkrE9LUkBQNFmcuqC6T5c ZdTY2I2KKAbEeQJZQC4DRHmXtJs 2018-08-02 22:02:42 66.175.211.27 9001 0
+s Exit Fast Running Stable Valid
+w Bandwidth=20
+r SkillkillerNode APvH2ybkWBxdexjH+doAWKEcUgM PUlIXVB/rP8LXICZcskODzhQIuk 2018-08-03 02:00:26 213.136.87.38 9001 0
+s Fast Running Valid
+w Bandwidth=221
+r MYLEX AQt3KEVEEfSFzinUx5oUU0FRwsQ gUTbeDPfpUzyt8PeunQeKNXN+7U 2018-08-03 04:41:18 77.123.42.148 444 800
+a [2001:470:71:9b9:f66d:4ff:fee7:954c]:444
+s Fast Guard Running Stable V2Dir Valid
+w Bandwidth=4820
+r Unnamed AQv4Sd/9+/hiM4mLdrd3W19u7lU ML5TFA64eFlr+F2mkUrnOSKL5zk 2018-08-03 06:12:52 131.255.5.189 4038 16951
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=277
+r DigiGesTor1e1 ARG6m2BGaeY2/9W1A/OCpLetboA vyn3TajinZ3w4fp8rVAZpfKjTWA 2018-08-03 00:15:21 176.10.104.240 443 80
+s Exit Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=45600
+r motauri ARgbMb5YYMfWbaiPiK1SLAZHD9k 7aUB+pMAKSfel/91omeYdeCn4qU 2018-08-03 06:40:25 95.143.193.125 443 80
+s Exit Fast Running Stable V2Dir Valid
+w Bandwidth=105
+r neburo AR31qo43Ri6/X3vkW9SLqKAIxJU 5bcJOZ5MNDNEqMDrS7FxWbbdRm0 2018-08-02 15:57:23 150.146.2.245 9001 9030
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=106
+r biochemistmoscow ASgRXsTMNXheAF8L8v7ffs3E8Ds othBuGWutxEIHIktnYMENmYiMQU 2018-08-02 17:15:46 188.32.140.126 12630 12631
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=207
+r testtorexit AUM4gpX0ymnsbj0B8ArVW7CmSqI RF5d3oRZmfBLRDIzhjocJTTItzg 2018-08-02 21:20:15 178.17.171.176 9100 0
+s Exit Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=4770
+r ToRHuBFR31 AUcISJZRGk4v070eAIWIuUXDeVc vYky/8+kcj4Gmbv6wZHFTqDW1k4 2018-08-02 21:01:30 90.76.115.160 9001 9030
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=101
+r d0dak AWCT7kuumvRz/AyBGp0Q/aqco0s mhA1PKHwsbCFl4mBDtxwFwI7gnM 2018-08-03 03:19:52 62.65.107.36 443 0
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=1360
+r heidelbeermann AWWmgIYt5cNM13JBE0cq97Hdyfs veZ+6MjlUm0wg2XgWQshU2dkgTA 2018-08-02 20:27:35 84.19.178.155 9001 0
+s Fast Running Stable V2Dir Valid
+w Bandwidth=138
+r noce AWZNQagfgXo+cUANa/1AlHqkCvs hljkLm9YBcihV5QaXjAyxs3sY+w 2018-08-02 23:12:28 216.127.173.78 443 80
+s Fast Guard Running Stable V2Dir Valid
+w Bandwidth=11000
+r hedden AXOnqLqdMgQ2QbaXJtMqmt/ibRY AQNXR5vxMA6+w49LsD12XU9mP8g 2018-08-02 15:25:08 93.174.93.133 443 80
+s Exit Fast Guard Running Stable V2Dir Valid
+w Bandwidth=11200
+r MarioInWonderland AXsMdjunCUoQim7SgflDNpcsrPA UJ3d9Hf4cZTgFs7RCDwzeJ/Go/U 2018-08-02 18:30:25 24.241.170.134 6667 23
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=1120
+r clifford AYA0aChQNFmEeB41O3pGNEPsPwY Yhx+phfhzoQ5yRq7U04c2KzG5TE 2018-08-02 21:16:53 97.107.138.68 9001 0
+s Fast Running Stable Valid
+w Bandwidth=768
+r StarlightGlimmer AYG3EojObX1XqnRHubsGAmQs1zs LKfEz95xMhIzLZvUN4axr7BUM3I 2018-08-03 00:52:09 51.15.240.157 9001 9030
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=28700
+r xoroxCA AY7bvkdSkYopPI0r6K3slCiSShU bh4ClkEWSxz16yApVYVVK27+HFI 2018-08-03 08:01:39 142.4.211.52 443 80
+s Exit Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=11500
+r Unnamed AZgfCa8I6x7Gn5GzHYm2x2dXYgo zq/8KGJjYH/T/tcEN1Knz1NbvxM 2018-08-03 08:42:52 54.36.112.244 9001 9030
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=1430
+r drachenklaue AZ7sjr+77xohuKhCA6Wh7FkfdC8 oWtk33r6DotnRjQaQl6GTyIhS+o 2018-08-03 02:15:05 94.130.68.230 9001 0
+a [2a01:4f8:10b:3259::2]:9001
+s Fast Running Valid
+w Bandwidth=3280
+r PyotrTorpotkinTwo AZ/rIs4Ey9BIm38kvgOFGLZPoiM ujKMibOAWtKbMsEfwKL2+8PQko0 2018-08-02 22:14:19 142.44.243.133 9001 9030
+a [2607:5300:201:3100::3e59]:9002
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=10200
+r multisec2 AaD8ChoRjh17F44jllQIDVz+Y/g AO8MoHRjufivUIvxbrgqG+zHyks 2018-08-02 17:28:07 193.90.12.116 9002 0
+s Exit Fast Guard Running Stable V2Dir Valid
+w Bandwidth=11700
+r ForEdSnowden AaHRX5/GftBfopZv+IMGftUCzwg rtZl6DDCAqxlOPbxnHyDgBOarOE 2018-08-02 14:52:26 51.15.133.16 9001 0
+s Fast Running Stable Valid
+w Bandwidth=4860
+r bluet0rchiere AaKWFndrffrt2MiIzukidq97Pn0 TGwMO3qDXmW7y1DspwHbJgWzTHI 2018-08-03 04:08:18 40.69.190.27 443 9030
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=5590
+r SicceggeChadwick AaTzz5Eik+dVeTJ3kMRQalj8IMM vn6qYDtpy8KdZbHw+5C4gi/5c7Q 2018-08-03 07:46:02 185.44.107.74 4223 0
+a [2a00:f820:14::d2c5:2c12]:4223
+s Fast Running Stable Valid
+w Bandwidth=425
+r pezizomycotina AaUMLIIRK0HThgjGUbOo9MW5pcU fOyIdXX6bAsaCmxkwHG5438EGC8 2018-08-02 16:16:26 45.77.147.38 9001 0
+s Fast Running Stable Valid
+w Bandwidth=1820
+r Unnamed AaXrMo2ePpb0tMAXI7J9w0d39Dw F5xsi+0d6e+cFMlvdvqR45/+PHM 2018-08-03 01:11:56 185.80.222.105 9001 9030
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=639
+r ins0 Aaklikbpf/iyyseRBXeGLBTyxSQ lLCtF3Vs7GTtfYxD990vFCXM3n4 2018-08-02 20:15:02 193.171.202.146 9001 9030
+a [2001:628:200a:f001:20::146]:9001
+s Exit Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=45600
+r rixtyminutes Aa4t4xQnbIL8zDYDocLzI45lRMk 877u+8Qdzlsj3nGuf6fi8c+My6M 2018-08-02 20:24:01 149.56.233.142 443 80
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=53300
+r UEUEUEU Abi++ERfTrx0t2bREPiiZkyV25Q WdvjyZfdB/KdnlRKWNlx1h2gDkk 2018-08-02 15:20:14 65.50.203.5 9001 9030
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=105
+r anonA437536 Ab/v5BU/lg0VZ1CEmiaTVBXa5eM rpF8sMFMcoF6KrNUlSlyHqjoR+4 2018-08-03 08:07:17 79.201.45.253 80 443
+s Fast Running V2Dir Valid
+w Bandwidth=822
+r mravenisko1 AdO3HxQP/sOgwf6EplaudpeXHqQ inkdWGHDe6SokInVKbi9POFpnq8 2018-08-03 06:41:40 46.229.237.53 9100 9101
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=12000
+r Unnamed AdcItBd93de58aQaMIHzMPuO8Dg QqzdU4tDcjtZi5UtAj57CbSFuL4 2018-08-03 01:49:35 185.243.112.87 9001 0
+s Fast Running Stable Valid
+w Bandwidth=532
+r haal AddGGyRP1AnLvnjP9vP65IP1zxQ zlWnfIhPRfQC3w/owqPGcDCTXhA 2018-08-03 00:35:35 223.26.48.248 443 80
+s Exit Fast Running Stable V2Dir Valid
+w Bandwidth=92
+r aerona AeedEdrxsvUiztFfMwTDdlb5jH4 mUCYKrijlH+KNHan+z0UopLHvRI 2018-08-03 03:56:31 145.239.72.73 9001 9030
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=15900
+r bauruine56 AhBHxRpXJU0mPduLknfKHChtYA4 UNy3dhlf4gCMwGKnUqWx3dvipS0 2018-08-02 19:00:02 94.198.98.21 443 80
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=16400
+r Jarvis AhUD3bW5mb2LS+re0NpSHwKhcpE tTodJqmmTy5NaJJwPru8GGU9d58 2018-08-03 07:41:21 85.17.164.172 443 80
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=1880
+r 00brilliano001 Ai/FUkL/eUubocvr+Q9/VQ1PW0w v1+NnKDf44X5+Y/Dwlu8VyzkxXw 2018-08-03 03:58:17 192.155.83.101 9001 0
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=182
+r tconionrelay Aj67xXvrf0VHOz3CqoEfs6q6RGY /FFM6fTRsx5pHUxekgVJS8IAx/Q 2018-08-03 05:35:07 108.32.49.20 9001 0
+s Fast Guard Running Stable V2Dir Valid
+w Bandwidth=3800
+r nibbana AltmzrwHD8sFGdIGzwz0llwgyW4 oIftSVvFoYtAZ9SjHCrt3Yph7pM 2018-08-02 19:04:06 185.100.85.61 443 80
+s Exit Fast Guard Running Stable V2Dir Valid
+w Bandwidth=5280
+r TORBSDrelayapgv AmVPw2B0kt2kTZbVuIqWkkdzrx4 LRcXuWOON0WYbBMbLNyTbvJQhg8 2018-08-02 09:23:32 207.148.25.38 9001 0
+s Fast Running V2Dir Valid
+w Bandwidth=862
+r redjohn AmawZg8/IKfR89gzWTHJXvUPbGs D6bB1n2ivGY/5SlK/Qkc18ZYpYs 2018-08-03 02:55:41 62.210.92.11 9001 9030
+a [2001:bc8:338c::1]:9001
+s Fast Guard Running Stable V2Dir Valid
+w Bandwidth=46400
+r zagreus AnQPRy0dpcG3dHXxiUD+efFa9Lg ZnMsazZYs4vcOCYK/LT6EfIvdHU 2018-08-03 03:18:03 81.169.222.158 9001 9030
+a [2a01:238:4224:8d00:f3a9:25e6:4cb6:f3d]:9001
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=1040
+r jofrylli Aoq0xMM8AfIWvE1IektMdea5aLY f/MMmehsDIQ+Ua73rfSr++5sbDg 2018-08-02 20:24:03 5.9.149.100 9001 9030
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=524
+r MrDetonia ApKIVb+teH+LNj8hhg0efRVuBlU /ptBlUfmG5LEXQyh9VpgzJysDv0 2018-08-03 04:54:48 188.165.212.152 9001 9030
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=2380
+r pkswitchny Ap4QelnStP69BqYRUWe9bQSNnAo dMsvn76BY7j8mPhMZ/tOqrtk3Pw 2018-08-03 03:08:15 104.236.52.16 1747 0
+a [2604:a880:800:10::63b:c00a]:7491
+s Fast Running Stable Valid
+w Bandwidth=6330
+r noiseexit03d AqYn+hlYCaOr4DG3hkzKejEPHUQ QERJGV1TWZrOQf5CQsTrc7ptW70 2018-08-03 08:20:30 104.223.123.101 443 80
+s Exit Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=11300
+r berrycup4 AsIN9ldfPFkeW7toLYjVMCjU9LE 5wnO/oNGjb0wh59CMbImTRUoZ+8 2018-08-02 15:12:42 18.82.1.29 9001 9030
+s Fast Guard Running Stable V2Dir Valid
+w Bandwidth=6300
+r criticalcat As0l7H5Vutvv32O/L6osixa9HCY HnNpl/TmslSUc4dQyY5L2rJYQ64 2018-08-03 01:40:43 46.182.106.190 143 110
+s Exit Fast Guard Running Stable V2Dir Valid
+w Bandwidth=15600
+r DobbyIsFree AtEPNRpFxkcLeV1asp20S09an54 HNbZrPVumaWrZbKPyC8FWyv7S5Y 2018-08-03 00:10:44 178.211.45.18 443 80
+s Fast Running Stable V2Dir Valid
+w Bandwidth=1500
+r NL01 AtE30iCWhWWzxnwtidi+bgmIwso 7ktqnx69Q39oYIRH8Jx3w2mrFK0 2018-08-02 23:36:40 140.121.136.124 9001 9030
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=1340
+r STONITH55 AuFPce5KTQvkmYuW8hRzPbmKYaM m0ffaaBjgpBeHoVlsORbCfyWva8 2018-08-03 02:00:23 89.163.204.55 443 80
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=10600
+r ididnteditheconfig Au1PjbEfEwO6IbFqoc8qCkhUeso qEk0kSXUQNIzk9PUPdeKlYHTekI 2018-08-03 07:56:51 62.210.217.207 9001 0
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=4160
+r martini Au1r6p+6pyBIcm1wvCw033AmHQI YJWWScD557fG1KMKJNMj0Gu5eVk 2018-08-03 06:36:11 176.123.8.227 9001 80
+s Exit Fast Running V2Dir Valid
+w Bandwidth=9050
+r playingsakura AviT91BnrtgeIwH40QINBVf94Mo ZpJQndUSwDZOnnGYOjPAtEW1Ogw 2018-08-03 04:04:27 153.126.211.188 9001 9030
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=1450
+r Unnamed Avypmadc15WSmzpT2o25DGrkydQ zxYeZovCg1/m0HlxjgftAB30u9c 2018-08-02 20:08:41 153.126.177.90 9001 0
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=107
+r ddxor Ay22W4QKWIypPh1Y3JGdVzsYU1o Z1uf+96FqrdTWdgeqSV97/V8pds 2018-08-03 00:55:41 46.101.53.114 9001 0
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=21100
+r Priya1 AzcXS1vEcPvK73Ff6OiRYvt1svs eyJd15izr0kcel2IoCgmG0BOg+A 2018-08-03 00:38:49 23.254.253.55 9001 9030
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=6950
+r Nebuchadnezzar Azj59VER/o41cOfeEX7zr5mcwdc +JYSaAvhVCWFqZRB9Tr3q6l7OkE 2018-08-03 05:06:38 185.163.45.91 443 80
+s Fast Running Stable V2Dir Valid
+w Bandwidth=7820
+r whatnick Az+6K93BZw15FcNKigpOEaZZgVA 97YRYVjTvV8l+W0ZcWrMMpEIff8 2018-08-03 08:05:47 94.130.105.140 9001 0
+s Fast Running Stable Valid
+w Bandwidth=99
+r SigtermNode81273 A03QiBoxFEagbbPDf9q6VfJL9FQ APhjuWqPt9ikYfTzcF1f7wgak0k 2018-08-03 03:01:30 193.150.121.78 9001 9030
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=86
+r utzer2 A10uIWsGW5YeQEvRcjNgUOWvTuo O/cr8UGCWd6weQDR7rBr2na3www 2018-08-03 08:14:18 177.85.97.121 443 9030
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=1280
+r Unnamed A3e3axX7PPySwgAeGAoypKs43wM z/S06Du5i7qeenhncqoSbQjGveQ 2018-08-03 08:04:25 62.212.72.243 9001 9030
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=20600
+r AdvMapperTor A4Cx7VYT0LQS8pSjpnI30U+z11g VX3WH50Bjc2b1bOwXyFqNT02ts8 2018-08-03 07:20:54 107.189.36.37 8254 0
+s Fast Running Stable Valid
+w Bandwidth=30
+r HerbieStone A40y8RSK/D2M2gx0tG8WEzuWeMc VzWU7Tcsx89tVNwuDUMYvSf+JH8 2018-08-02 16:33:03 85.195.252.93 9001 9030
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=405
+r ry4an A5ADwyDZmA4KdA8QehqcE8mcX+M Q35htHu73IqrU1jMxzpiNOTXaA8 2018-08-02 16:52:43 97.107.142.234 9001 0
+s Fast Running Stable Valid
+w Bandwidth=1850
+r wmDEpr0 A6jPvPqxpT1cJWYkE+RHd8baN3g eCObago7zqWXrnCuofeUFzET5o8 2018-08-02 19:08:10 5.9.181.162 9001 0
+s Fast Running Stable Valid
+w Bandwidth=75100
+r Ichotolot61 A8MGnoFOKW6xh3brYbHst1Ttif4 t2r2YSzRdEc+LKJfisTvGnysIw0 2018-08-02 17:28:25 81.7.14.253 993 9002
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=7640
+r SPARTACUS A8i2A66+wKxMH3PjsMyWoCoE2D0 oc0lQeppMgL0Mr4VSuVnsvC5bsY 2018-08-02 20:17:39 31.31.76.123 80 443
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=4790
+r itzme A9og/XHO0YjIt2UugZQcUGck26Y ifqen9aAOF78rTh1jamUDnQBOdQ 2018-08-02 16:47:23 198.74.57.57 443 80
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=323
+r krigernes A9wIHkQJYxAG78068Tr6rytVP/w fD+v6iq9U/KX85d3CNt2EAtQfkc 2018-08-03 08:32:43 185.32.221.201 443 80
+s Fast Guard Running Stable V2Dir Valid
+w Bandwidth=18800
+r noipser A92dpOEU07/gYD6aDaJBlYi5xFs 4xCaHQW9B52yg+cxAfoPlkJXKXM 2018-08-02 20:46:48 84.241.67.49 9001 9030
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=636
+r Unnamed A+F1iEquFDtm3XtgDP4+vCfI8UU CXi6DF/vv1J83gi3K7eLFLeTjJc 2018-08-03 08:22:35 137.59.52.98 26017 32614
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=306
+r ten08 A+MYhWPKwwNyPVba36xwZoJCIgI nE2G5bsejVn2qjME9hGDe9G0tOY 2018-08-03 07:27:01 72.210.252.137 443 9058
+s Exit Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=171
+r 4pyro2eu3org0 A+n35mnI+RHF7sPsCUUzFR+FdCA NgLQ/yKMp6XQ5oPNJMn15k9Jxk4 2018-08-03 08:00:01 217.155.40.118 9001 80
+a [2a02:8010:60a1:2013::1]:9001
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=2920
+r arbitrium A/aKtWkVTEuZXn82UoMiB55IKbk rsLgPLpW7Y6g/u4t22XvIsEP/nI 2018-08-02 21:53:11 201.80.40.186 9001 9030
+s Exit Fast Running V2Dir Valid
+w Bandwidth=5
+r raptor A/gtTd+U70B3ZKfD92ofGy+lAU0 E1OTt9R4Hxl9WP1a/DRLTGu9jAs 2018-08-03 03:43:46 91.134.133.88 443 80
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=23700
+r RichardFeynman BACF/+HojPSKsLWyqzkDV1jGXww EXaZHep3ncIEIASfySTUY/ZiGsY 2018-08-03 08:21:08 178.63.27.82 9001 9030
+s Fast Running Stable V2Dir Valid
+w Bandwidth=1660
+r jkO BAlgXoNDVip5D/6EbLO9fARCn3A XLr2yGVjuu0cJlu/pBK57TtpaQ4 2018-08-02 15:04:35 158.69.204.36 443 0
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=16700
+r Unnamed BAp0QjSaKskiM8JHDWxPK9Au3xU ZuBlbezrb+9ivXTjL6QqVW1mWRo 2018-08-03 01:18:47 216.218.134.12 9040 0
+a [2001:470:1f04:d9a::2]:9040
+s Exit Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=5780
+r freedom BB4/zAJi5a8aouyJoTVljAfA2ak KaJu6SuqntVhm3VqZeD/MpMnXE4 2018-08-02 21:17:12 193.81.216.140 9001 9030
+s Fast Running Stable V2Dir Valid
+w Bandwidth=3010
+r OneFreeInternet BCCU1NeqJKJDZTSzc8g430XS71w YhqNqGvOe5GugK9jyKmMtBAV+gs 2018-08-03 01:42:55 109.91.18.11 9001 9030
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=23
+r UbuntuCore239 BFk8/QzzPypeD/Geqg5V8Ft18eY T9QF6BzyAct+1Nwii1+ycUdAN/o 2018-08-03 05:15:11 123.201.4.101 43567 0
+s Fast Running V2Dir Valid
+w Bandwidth=102
+r Fantominus BGwBoF2mbYw9R7bOQTILK2XbtKM 6bSR+n4ciEGgNniyzPOOaEqDD+w 2018-08-03 05:26:35 51.15.138.212 9002 9031
+s Fast Running Stable V2Dir Valid
+w Bandwidth=3850
+r hviv117 BIUCego0nUVNl49sHOzdKeoXdpo nY1amV6tlsr7T5XLbqrCrSSlLJQ 2018-08-02 23:12:26 192.42.116.17 443 80
+s Exit Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=30700
+r tdz BJQnzlH3tNSQDZ9Jdr/rcufYy6s /8gKIFLvkO0BoprJCYaAbRodJCI 2018-08-03 02:40:04 45.77.137.216 3158 3159
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=59
+r reallyniceplace BJhSoQgFg16assVR1sQ4vm3oskw Yw23fSp5N4283tXlZEN0TutZWz4 2018-08-03 07:11:02 104.223.33.211 9001 0
+s Fast Running Stable Valid
+w Bandwidth=71
+r v01d BJwRaJlrM7IkDfbYPDW4VFLPcKY pwATLNnX7qFpoNLs5ag/yue7V2U 2018-08-03 08:06:17 78.107.239.213 443 80
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=8450
+r vivretor2 BKErPYsMsF0s9b4P2Fqrr8xxCTY suAHe8bvBDi79P2E3EKV5HzJAik 2018-08-02 16:41:30 83.150.61.225 9001 9030
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=546
+r darknebula BKKKYvJ9nEpg+e0MQmTpi5iMZaM e0O4z4YfXJwhn/V4cOCGuq5c7vk 2018-08-02 17:21:05 163.172.169.253 9001 9030
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=15900
+r moonunit BKjME3TBcpEfF/dsA7VthI7KLJk PfocOFczt7CE9/1/7fAueds15nk 2018-08-03 08:04:17 159.203.90.174 9001 9030
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=440
+r salottisipuli BKv5Cu+FVvOn4FJ3Is36f9y2bFk mnQIihRq0230UnK3BJVv0kb+opo 2018-08-02 16:29:05 83.145.241.231 53280 53281
+s Running Stable V2Dir Valid
+w Bandwidth=2
+r Unnamed BLU9zz6WRdKgy8o0ATii5QuxCEs aA5+DIyc7O8n5+EB0uE+hVS7VSI 2018-08-03 03:38:10 192.254.73.90 19640 9607
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=1470
+r TheEvilInTheDetails BLdzHfja5QUgpU3OfBtbCUA4fHI 2QlmVlS8+wQuoNNd2hyllU957zM 2018-08-03 04:15:29 77.203.13.57 9001 0
+s Fast Running Stable V2Dir Valid
+w Bandwidth=973
+r default BLzJ6OMl7s/HggXQmRINWvKxYiU zr4OZN0/3B+P/mQCtlyNT2xNBKw 2018-08-03 00:29:36 108.34.152.246 443 9030
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=1330
+r Unnamed BMDTWrNKpLR457eWMbDplBwGjpY MQBflU2c8usiEteHJMPN6hrgBE0 2018-08-03 01:38:57 31.202.103.40 443 80
+s Fast Running V2Dir Valid
+w Bandwidth=5190
+r rofltor08 BOO1kl619mxuyBCj13AuDKP51ec 7YjY0onANH/wEPOVTsvIIV3xCJA 2018-08-03 07:34:54 95.216.136.46 9001 0
+a [2a01:4f9:c010:2e::1]:9001
+s Fast Running Stable Valid
+w Bandwidth=1630
+r dorinne BO5eGyMSfSajb3HGaBDYiwuAu5E TChw7egVGRBRQ+I/y0DzChsyz8w 2018-08-03 04:14:39 91.213.233.138 443 80
+s Fast Running Stable V2Dir Valid
+w Bandwidth=513
+r Unnamed BPDUf97e7WO4HHrl3saf5gHrlD0 Kfg81VkX+H0mbDKJUefuxmWQhd0 2018-08-03 09:41:04 82.102.20.254 31315 27876
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=1300
+r herbst BPLexz8mGjhzQA+d0o/KMl5V3GI thIIknxbozwHhblQ/NdPN/OXREE 2018-08-03 06:23:04 5.9.253.234 9001 0
+s Fast Running Stable Valid
+w Bandwidth=707
+r Unnamed BQH7879uv7fglQMxai9VUchLTe4 Tn3vCeBqkukjad2wUCSu1+KDI+I 2018-08-03 02:24:53 194.12.125.48 9001 0
+s Fast Guard Running Stable V2Dir Valid
+w Bandwidth=1810
+r Nevada BRB1nNy1CT4ceeYn9EDzo6iB+4k YS7UGFSP71izFRZoqQzmOosrcRc 2018-08-03 02:56:05 209.141.51.150 443 80
+a [2605:6400:20:693:279d:170f:8868:bc3e]:443
+s Exit Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=20200
+r AccessNow007 BRYIXWysQO1M3O/fxcz2sA3mHe0 GZfGIkLG/z9M1FUg1nvqwRq7COQ 2018-08-02 17:45:19 176.10.99.207 443 80
+s Exit Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=31700
+r torrbx1 BSEi7+98cHtmXUdag+Qo1j9R5MU 3CwH1RxgU7z7SYvEmDE2o6eIYxM 2018-08-03 04:23:04 188.165.0.171 8443 80
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=17500
+r Mercury3001 BSn0ABbWaS7ysOwQ3GNWKJ1k/YI 9cKwziyUeiDRPUYsxTk6v2NNXgE 2018-08-02 20:11:58 107.170.113.28 9001 0
+s Fast Running Stable Valid
+w Bandwidth=270
+r torproxy02 BTYOlVxMTFHLoUDf3fyL3irPYkQ /NeiwSsSkxTvPhj83t4NpFFXxww 2018-08-02 18:46:34 195.254.134.194 443 80
+s Exit Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=19600
+r Kabo BVY4OqJpBUbd7INLa9Bxn9EYyhE E6g9ntDmTZkRmc1rHMVqubb5qK0 2018-08-02 17:10:24 115.188.138.41 443 0
+s Running Stable V2Dir Valid
+w Bandwidth=9
+r verax1 BVo8qiWCuHRIMBNn7NWQXROO8Ek tK1oJN7PmGPD+eikVu+AzdZ7WmE 2018-08-02 16:20:25 104.236.46.10 9001 9030
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=476
+r dinuccio BVsVWkSpaEkdce7xHTtq44CC9vw ynBiOCa9rmyRWyrh2wreSw/l9N4 2018-08-03 04:26:24 46.38.48.225 443 80
+s Fast Guard Running Stable V2Dir Valid
+w Bandwidth=7210
+r Unnamed BWgal2eDTZ7am9/k4Vob1zxP388 Gy67/8qrWzDN0a3UWM6sx2UTwpo 2018-08-02 18:48:48 109.236.83.11 46810 0
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=79
+r ventilaar BXwH3EQ2lWWY4xANEWBZDEZlg2s rsSDBoz5YlKcKxUoY0i0RVrB4sc 2018-08-03 00:51:15 85.148.210.173 6112 6113
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=969
+r an0S0c BZIshhyYjVyP1GzYwDUdwUjkKwA 4brJGQ8qOEIaG5WToWL8M5+Q7pY 2018-08-03 04:41:35 193.201.225.45 9001 9030
+s Exit Fast Guard Running Stable V2Dir Valid
+w Bandwidth=12100
+r argon BZcxRrCaiuw/Voxg4E8dsMWO/d8 KX1PvB0PFctcTbku9rV4viU9lGE 2018-08-03 02:07:22 94.130.183.252 443 80
+a [2a01:4f8:1c0c:43f3::1]:443
+s Fast Guard Running Stable V2Dir Valid
+w Bandwidth=8310
+r ChateauTor4 BZmaRjKs8Q2P85plXIPctJMEKdM csaDnmBC2LoKMVt15nZNFJYZh0g 2018-08-03 02:16:35 81.84.174.240 19001 19030
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=522
+r FR0ZE BaaTmWJE5lRgLEU8ju1dVLhaY7o FRCnObtNHSHHf9OJwYemGEJqfwQ 2018-08-03 07:03:58 45.58.60.127 9001 0
+s Fast Running Stable Valid
+w Bandwidth=453
+r UbuntuCore239 BapEC/zZIfMYVzExX6A8AVC78E4 J/Cr15mk5jwyqo0vX0jjdNFrNtA 2018-08-02 15:59:34 174.68.135.156 37197 0
+s Fast Running V2Dir Valid
+w Bandwidth=266
+r UbuntuCore238 BazVfvlIJiAcRvKcgAVgF4PndY4 /+SmnRWdW1nU2QdxPrOm0tZjSV4 2018-08-02 23:15:19 75.73.113.230 38019 0
+s Running V2Dir Valid
+w Bandwidth=0
+r Slothkrew Ba3mtsWZj2kz6h6EI6sg8FzUTJA 7TJv5pHXbJdhdHCjp0u79fTuq7A 2018-08-03 06:50:40 107.191.46.204 9001 9030
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=1050
+r Hufflepoop2 Bbb4krYsPL+FdOEljm/eKc4E4bE hf3K+nmebe0a+hNhfWlJiowkEVc 2018-08-02 18:04:15 40.69.62.87 443 9091
+s Exit Fast Running Stable V2Dir Valid
+w Bandwidth=1030
+r montrose BcOD3IE8RktxMlaXIr5SQ6n/c1w /3EVED6lqkqmOXrNTHo/ZDCtXZs 2018-08-02 21:06:37 160.119.249.24 443 80
+s Exit Fast Guard Running Stable V2Dir Valid
+w Bandwidth=708
+r ramp BceS6FE3fgQe+yzV4gs7rRmTyZs ide7YQ3OJYBHSnmvZrLJjl/BHug 2018-08-03 07:29:45 129.233.217.21 443 0
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=62
+r Unnamed BdV+eFk5MaqawLcSd9QXovYR+/E /fiK909w47beqjCv/ptzKqTfwXo 2018-08-03 06:43:49 95.154.194.110 9001 9030
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=57000
+r 0x3d069 Bd27dKq28Z4AMYhwKx5U8jA10GQ 5UADK6Zrtwr71cChGMPhOccAWJ0 2018-08-03 02:32:07 37.48.120.47 2195 0
+s Fast Running Stable Valid
+w Bandwidth=1540
+r ickwesjanet BextwGujtKpj5aDmYU74fyZxC4A xx6R4R5MC7Ao+s4RinUHrW+Uae0 2018-08-03 04:52:15 176.9.102.35 9001 0
+s Fast Running Stable Valid
+w Bandwidth=3560
+r HelpCensoredOnes Bf+jnXHaEW92aepO5ToLrqMVun8 HMN1U0g0FpBW0EJ8lBWUtxmdQ+c 2018-08-03 00:07:00 85.93.218.204 9001 9030
+s Exit Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=38200
+r default BgzSw24pRwmWZ/yXSgRNj2k9NMM w1fUgtx+nD2g8W4qpvoSCq8jUYI 2018-08-03 01:40:45 113.156.170.252 443 9030
+s Running V2Dir Valid
+w Bandwidth=9
+r Ninjaipservers Bhsv7/0rjre2fNRv8uohTtQIUqM COhD8xbjYy/RwJgRI7f4gms5skE 2018-08-03 08:46:31 205.185.121.251 9001 9030
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=6210
+r Unnamed BjFOiqh8TEgKZBeFsKoTGCO5x9M MdHjiM1YOMkZq7XoYguD8ZEeU8U 2018-08-03 07:25:20 93.115.26.28 26490 20611
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=786
+r bauruine66 BjvTv4wRBhfnygnJbA7cAnAynws LGcNO6Mbbs45qmwKyGS1kjWUIsQ 2018-08-02 17:21:13 94.198.98.21 3443 8888
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=22800
+r Hydra1 BkfD+DUrv6DVehw+Dc9n/D4HPSw m6nqf2/ZqClM1bbUnHQ0ibd1uEM 2018-08-02 18:55:08 185.165.168.168 9001 9030
+s Fast Guard Running Stable V2Dir Valid
+w Bandwidth=14400
+r StarTor Bkh/bvhmmX8oaEBAsWyw+TOiYe4 due2czp4kPPYMZ6RbqPRma6lDS0 2018-08-02 21:45:12 86.189.255.145 9001 0
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=2030
+r TheYOSH Bk0YPTTey4T3LEM1sMJNHolGqbo ovY9Y/k8MStCHZN9jhMQXkjVkWo 2018-08-02 20:30:31 85.149.71.50 9001 0
+a [2001:470:1f0a:716::2]:9001
+s Fast Running Stable Valid
+w Bandwidth=317
+r SanitaryLandslide Bk08TMG4VIObCXn+HC8Fq6t/nWg vK4/C6qIdnfpyih2nbEbHCMMw7c 2018-08-02 17:15:55 104.244.73.126 443 80
+a [2605:6400:30:fa6b::1]:443
+s Exit Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=34900
+r Unnamed Bltt5n9ayUP/TD1LiPSHa8SGJk8 nGoAiprx9fCQqWRU9Ev8ZAf3/0E 2018-08-03 03:35:50 188.79.122.130 9001 0
+s Fast Guard Running Stable V2Dir Valid
+w Bandwidth=2910
+r t0rstar BmYNkWbwkvU25P+NVXr4Elvou/g ikGH12Q2ljC10N98Or2u9sHVW6Y 2018-08-02 15:04:05 35.168.202.103 443 0
+s Fast Running Stable Valid
+w Bandwidth=85
+r FreifunkIbbenbueren Bmc11D+0dvpkV4xdgp4XbfU+WgA v6OFa1MktJM0JLtjwAlUSzIJDeY 2018-08-02 20:18:56 92.252.23.5 9001 9030
+s Running V2Dir Valid
+w Bandwidth=20
+r Unnamed Bm8SOPSuNczTatARXFgH1VaDSPE EBQiXTef0BwMoYAW9GgDxymy8mw 2018-08-02 22:59:51 89.108.111.156 9001 0
+s Running Stable Valid
+w Bandwidth=2
+r Unnamed BnNMyfW70XrVcorsZtcJ+aKXlAw sk02VOg1ryBhJKeMt+EOh/uMm88 2018-08-02 18:20:31 81.17.31.210 3516 26306
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=1710
+r erbse BoBOY4PulOg8lFPzmx5STCctbYQ 82RlG/MRKqIDaAkVBbXsFRyLPQs 2018-08-03 00:11:03 109.70.100.7 443 80
+a [2a03:e600:100::7]:443
+s Fast Guard Running Stable V2Dir Valid
+w Bandwidth=40200
+r ThoridalTheSecond Bpgs4HiHwVOOjukc9Cm/5poBKcA D2GUlkYDyXVU/PdIvQme3J0nzkg 2018-08-02 15:05:50 188.32.254.164 9001 9030
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=3140
+r free Bp362oxl3qK5sichYK9eV5WPmpc KnMlicj3zL/1fl7gTDSns0JTqng 2018-08-02 17:59:42 157.22.22.254 443 0
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=3670
+r Unnamed Bp5zLslndO1WCdSAPXsRMOM4sOs CVF4OBFVBtmmRDzCepu5fRVBIiU 2018-08-03 01:16:42 94.19.14.183 9001 0
+a [2001:470:dd5f:2::2]:9001
+s Fast Running V2Dir Valid
+w Bandwidth=2870
+r Unnamed BqWNJfdJGYfitbJxMWAY5rHsYvk zrQzcAZRViWyDPh3uheIeGyLiQI 2018-08-02 19:14:00 185.141.63.115 884 26206
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=1360
+r deprofundisclamavi BqtuhT6Nkp+dYOOkHvT5e3z2/aQ a5lfq/FKoBMFAMdU3NQs6syiQPs 2018-08-02 15:30:48 176.114.248.47 9001 9030
+a [2001:470:59a3::1]:9001
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=25
+r cloverknight Bq19AZogEvLPmnUJYaS//OIYDh4 kqdUuOOiSV0r0WcqOkmID1rTB3k 2018-08-03 08:45:12 84.92.97.97 29001 29030
+s Fast Running Stable V2Dir Valid
+w Bandwidth=2
+r BBBunderdog Bq9xCifo7tpJclm1ik+SmqgRbic jjpakHIKCl93hAwwENMet6JPnI8 2018-08-02 17:01:13 173.62.176.61 9001 0
+s Fast Running Stable V2Dir Valid
+w Bandwidth=21
+r KlausTor02 BrCih7SFKIUk7XYd+vqq0uSomSs JZtp99iqOZj6mZw1IbRB6AUmrKQ 2018-08-02 14:59:09 195.201.27.159 9001 9030
+a [2a01:4f8:1c0c:53ae::1]:9001
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=24200
+r UbuntuCore239 BrRm0yLAZRgbJYJp6R6zdc6fRuc BamL7ZMmT81KuiYnTZimAZAftE0 2018-08-03 08:47:16 77.46.97.134 38616 0
+s Fast Running V2Dir Valid
+w Bandwidth=1540
+r wpiCrystalMaiden BrgSS063LbDb94yICmdP7a2E32A gCazrMiGgNojTtklwysRFfLbqlQ 2018-08-03 04:56:35 217.12.199.182 443 9030
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=2210
+r BBSTor BsHu4OscHhjp0c/waPubyWqNa7c SNrgU1lD/RyqUBuJOKruffGhJVM 2018-08-03 03:19:23 52.90.84.21 443 0
+s Fast Running Stable Valid
+w Bandwidth=31
+r tccwg BsLWuUGFIdPsZEgTHR1JboklSqA edu8rdZNIlek94a2Wx2+valLqQw 2018-08-03 02:13:50 91.137.17.241 10719 10718
+s Fast Running V2Dir Valid
+w Bandwidth=240
+r 666Name666 BsTmgLAplsNomK1DVtt0aYZfUAo lDmI+OhWwelP8ioDHvd3VwQNU0Y 2018-08-03 07:01:11 67.183.149.202 54817 0
+s Fast Running Valid
+w Bandwidth=1090
+r COSMOPOLIS BtD7nGhg6Nf7meoxCgFnB6+qcc4 dqHkNVbfzCt2M9hFKXx8B2Sqlu4 2018-08-02 23:01:36 78.108.46.114 9001 80
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=1530
+r BossNET BtWQIqIWr7cdIlYiC9W5QrFdiO4 iErmaqpabYw+B3HkmrxnLxBRsm8 2018-08-03 08:19:49 45.24.115.26 443 80
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=20
+r Unnamed Btd+RhyYFCQ9osYUVUTVuztGtS4 7YWswn5rhPU8ovE2TuOEK0ZTYWQ 2018-08-02 15:45:15 54.36.112.234 9001 9030
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=1080
+r wien BuclJrvgQMUcWt+6oHrdmuteH6E Le3yMdvTRcIy0FHo1nGhepbSFMo 2018-08-02 20:03:09 94.23.247.42 443 80
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=33800
+r gontran Bucpv9RmJ51PymiE382azWTwaJo XRkvoDrYq7gmYLoL+1aAqKuJnZ0 2018-08-02 19:45:29 167.114.67.4 443 80
+s Fast Guard HSDir Running Stable V2Dir Valid
+w Bandwidth=13000
+r cypher BvAr5smoF6HJo0At4ACcvg7pLWE X3eD486xhoV0HOmnbCMNfxVpsYg 2018-08-02 16:52:05 136.243.147.28 9001 9030
+s Fast HSDir Running Stable V2Dir Valid
+w Bandwidth=1090
+r gollum BwFTR2TOX/w33rv8pas6n7bvnF8 yqrsH5KMMODYyJmoFrNu9yn2mlU 2018-08-02 18:56:30 46.166.129.156 443 0
+s Exit Fast Running V2Dir Valid
+w Bandwidth=31800
+r thorgodofhunger BwQGL7mlpWWTYaC49CuItkGaG0Q a648cag93s++br+inSGfwtMXOAk 2018-08-02 23:01:59 94.130.10.251 9001 9030
+s Fast Running Stable V2Dir Valid
+w Bandwidth=384
+r UbuntuCore239 BwoNxa5x1gqVZ/+Qik6/tSxnDjk ezfYfNzXUdrs1QQpFiNW9odgWyI 2018-08-02 23:21:51 102.137.57.68 45295 0
+s Running V2Dir Valid
+w Bandwidth=0
+r LaTlayuda BxKIshgnEeUoQkgTcEjg+7+zYjM zo7eUoCVjNNBhfgs4ZIgyZWL2jk 2018-08-02 22:00:07 91.121.147.65 9001 0
+s Fast Running Valid
+w Bandwidth=313
+r YouPornTheNSA BzMU6G1Fc/pUEzWB47iVWrPMVxU ojsd5W8cVAe3j8mbuyIMlDgfB1I 2018-08-02 21:56:14 159.203.38.250 9001 0
+s Fast Guard Running Stable V2Dir Valid
+w Bandwidth=2700
+r T0rzR3lay B10UMsMtzakmp1OUVEVOY1+R2L0 HXc6whRIMEIWRVTBc5suDoMBIRk 2018-08-03 04:13:06 79.25.125.149 9090 0
+s Fast Running V2Dir Valid
+w Bandwidth=26
