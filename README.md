@@ -4,7 +4,7 @@ Load balancing for Tor hidden services.
 Currently under development. Only supports v2 for now, but working on v3.
 
 ### Configuration:
-The configurate file follows the following format:
+The configuration file follows the following format:
 ```
 {
   "Services" : [
@@ -22,7 +22,7 @@ The configurate file follows the following format:
   "LogFilePath": ""
 }
 ```
-Each serive represents a master hidden service that will balance the back instances specied in "BackendAddresses". Address represents the address of the control port onionspread will use as a controller. Both ControlPortPassword and LogFilePath fields are optional.
+Each service represents a master hidden service that will balance the back instances specified in "BackendAddresses". “Address” represents the address of the control port onionspread will use as a controller. Both ControlPortPassword and LogFilePath fields are optional. 
 
 
 ### Building:
