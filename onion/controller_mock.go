@@ -8,17 +8,17 @@ import (
 )
 
 type MockController struct {
-	ReturnedHiddenServiceDescriptor    *descriptor.HiddenServiceDescriptor
+	ReturnedHiddenServiceDescriptor    *descriptor.HiddenServiceDescriptorV2
 	ReturnedRouterStatusEntries        []descriptor.RouterStatusEntry
 	ReturnedHiddenServiceDescriptorRaw string
 	ReturnedErr                        error
 	PostedDescriptors                  map[string]string
-	FetchedDescriptors                 map[string]*descriptor.HiddenServiceDescriptor
+	FetchedDescriptors                 map[string]*descriptor.HiddenServiceDescriptorV2
 	PostedDescriptor                   string
 }
 
 func (m *MockController) FetchHiddenServiceDescriptor(address, server string, ctx context.Context) (
-	*descriptor.HiddenServiceDescriptor, error) {
+	*descriptor.HiddenServiceDescriptorV2, error) {
 	if m.ReturnedErr != nil {
 		return nil, m.ReturnedErr
 	}

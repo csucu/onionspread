@@ -20,10 +20,11 @@ import (
 var (
 	pubKey                     *rsa.PublicKey
 	priKey                     *rsa.PrivateKey
-	testDescriptorRaw          string
+	testV2DescriptorRaw        string
+	testV3DescriptorRaw        string
 	testRouterStatusEntriesRaw string
 
-	descriptor = &HiddenServiceDescriptor{
+	descriptor = &HiddenServiceDescriptorV2{
 		DescriptorID: "g55eugbqhviysu7bi4qzjcru5r4q7wxb",
 		Version:      2,
 		PermanentKey: "-----BEGIN RSA PUBLIC KEY-----\n" +
@@ -33,7 +34,7 @@ var (
 			"-----END RSA PUBLIC KEY-----\n",
 		SecretID:         "lla5msccdow4h5dfbnwihs63fgb4ve77",
 		ProtocolVersions: []int{2, 3},
-		IntroductionPoints: []IntroductionPoint{
+		IntroductionPoints: []IntroductionPointV2{
 			{
 				Identifier: "6zmzbqr2wal2ynzcn2zk2pnfvdvokxim",
 				Address:    net.ParseIP("91.221.119.33"),
@@ -133,13 +134,22 @@ var (
 
 func TestMain(m *testing.M) {
 	var err error
-	descriptorBytes, err := ioutil.ReadFile("../testdata/desc.txt")
+	v2DescriptorBytes, err := ioutil.ReadFile("../testdata/desc.txt")
 	if err != nil {
 		fmt.Printf("TestMain: %v\n", err.Error())
 		os.Exit(1)
 	}
 
-	testDescriptorRaw = string(descriptorBytes)
+	testV2DescriptorRaw = string(v2DescriptorBytes)
+
+	v3DescriptorBytes, err := ioutil.ReadFile("../testdata/hsV3-desc.txt")
+	if err != nil {
+		fmt.Printf("TestMain: %v\n", err.Error())
+		os.Exit(1)
+	}
+
+	testV3DescriptorRaw = string(v3DescriptorBytes)
+
 
 	routerStatusesBytes, err := ioutil.ReadFile("../testdata/routerEntriesLong.txt")
 	if err != nil {
@@ -169,7 +179,7 @@ func TestMain(m *testing.M) {
 func TestParseHiddenServiceDescriptor(t *testing.T) {
 	t.Parallel()
 
-	var got, err = ParseHiddenServiceDescriptor(testDescriptorRaw)
+	var got, err = ParseHiddenServiceDescriptorV2(testV2DescriptorRaw)
 	if err != nil {
 		t.Fatalf("failed to parse hidden service descriptor: %v", err)
 	}
@@ -196,7 +206,7 @@ func TestExtractIntroductionPoints(t *testing.T) {
 	var testCases = []struct {
 		name                  string
 		input                 string
-		wantIntroductionPoint *IntroductionPoint
+		wantIntroductionPoint *IntroductionPointV2
 		wantData              string
 		wantEOF               bool
 	}{
@@ -348,14 +358,14 @@ func TestCreatePublicKeyBloc(t *testing.T) {
 
 func TestGenerateDescriptorRaw(t *testing.T) {
 	var pubTime = time.Unix(time.Now().Unix()%(60*60), 0)
-	var descRaw, err = GenerateDescriptorRaw(descriptor.IntroductionPoints, pubTime, 1, 0,
+	var descRaw, err = GenerateDescriptorRawV2(descriptor.IntroductionPoints, pubTime, 1, 0,
 		"", pubKey, priKey, nil, nil)
 	if err != nil {
 		t.Fatalf("failed to generate descriptor: %v", err)
 	}
 
-	var desc *HiddenServiceDescriptor
-	desc, err = ParseHiddenServiceDescriptor(string(descRaw))
+	var desc *HiddenServiceDescriptorV2
+	desc, err = ParseHiddenServiceDescriptorV2(string(descRaw))
 
 	if desc.PermanentKey != descriptor.PermanentKey {
 		t.Errorf("expected PermanentKey %s got %s", descriptor.PermanentKey, desc.PermanentKey)
@@ -396,7 +406,7 @@ func TestGenerateDescriptorRaw(t *testing.T) {
 //		t.Fatalf("authentication error: %v", err)
 //	}
 //
-//	var descriptor = &HiddenServiceDescriptor{}
+//	var descriptor = &HiddenServiceDescriptorV2{}
 //	descriptor, err = FetchHiddenServiceDescriptor("7ctbljpgkiayaita", "", controller, context.Background())
 //	if err != nil {
 //		t.Fatalf("failed to fetch descriptor: %v", err)

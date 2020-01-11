@@ -13,7 +13,7 @@ import (
 
 // IController is a interface for Controller
 type IController interface {
-	FetchHiddenServiceDescriptor(string, string, context.Context) (*descriptor.HiddenServiceDescriptor, error)
+	FetchHiddenServiceDescriptor(string, string, context.Context) (*descriptor.HiddenServiceDescriptorV2, error)
 	PostHiddenServiceDescriptor(string, []string, string) error
 	FetchRouterStatusEntries() ([]descriptor.RouterStatusEntry, error)
 	GetConn() *control.Conn
@@ -26,7 +26,7 @@ type Controller struct {
 }
 
 // FetchHiddenServiceDescriptor returns a hidden service descriptor for the requested address
-func (c *Controller) FetchHiddenServiceDescriptor(address, server string, ctx context.Context) (*descriptor.HiddenServiceDescriptor, error) {
+func (c *Controller) FetchHiddenServiceDescriptor(address, server string, ctx context.Context) (*descriptor.HiddenServiceDescriptorV2, error) {
 	c.mux.Lock()
 	defer c.mux.Unlock()
 
@@ -63,7 +63,7 @@ func (c *Controller) FetchHiddenServiceDescriptor(address, server string, ctx co
 				continue
 			}
 
-			return descriptor.ParseHiddenServiceDescriptor(hsEvent.Descriptor)
+			return descriptor.ParseHiddenServiceDescriptorV2(hsEvent.Descriptor)
 		}
 	}
 }

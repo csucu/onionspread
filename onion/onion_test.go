@@ -19,10 +19,10 @@ var (
 	routerStatusEntries    []descriptor.RouterStatusEntry
 	publicKey              *rsa.PublicKey
 	privateKey             *rsa.PrivateKey
-	backendDescriptor1     *descriptor.HiddenServiceDescriptor
-	backendDescriptor2     *descriptor.HiddenServiceDescriptor
-	backendDescriptorLong1 *descriptor.HiddenServiceDescriptor
-	backendDescriptorLong2 *descriptor.HiddenServiceDescriptor
+	backendDescriptor1     *descriptor.HiddenServiceDescriptorV2
+	backendDescriptor2     *descriptor.HiddenServiceDescriptorV2
+	backendDescriptorLong1 *descriptor.HiddenServiceDescriptorV2
+	backendDescriptorLong2 *descriptor.HiddenServiceDescriptorV2
 )
 
 func TestMain(m *testing.M) {
@@ -52,7 +52,7 @@ func TestMain(m *testing.M) {
 		os.Exit(1)
 	}
 
-	backendDescriptor1, err = descriptor.ParseHiddenServiceDescriptor(string(backendDescriptorRaw))
+	backendDescriptor1, err = descriptor.ParseHiddenServiceDescriptorV2(string(backendDescriptorRaw))
 	if err != nil {
 		fmt.Printf("TestMain: %v\n", err.Error())
 		os.Exit(1)
@@ -64,7 +64,7 @@ func TestMain(m *testing.M) {
 		os.Exit(1)
 	}
 
-	backendDescriptor2, err = descriptor.ParseHiddenServiceDescriptor(string(backendDescriptorRaw))
+	backendDescriptor2, err = descriptor.ParseHiddenServiceDescriptorV2(string(backendDescriptorRaw))
 	if err != nil {
 		fmt.Printf("TestMain: %v\n", err.Error())
 		os.Exit(1)
@@ -76,7 +76,7 @@ func TestMain(m *testing.M) {
 		os.Exit(1)
 	}
 
-	backendDescriptorLong1, err = descriptor.ParseHiddenServiceDescriptor(string(backendDescriptorRaw))
+	backendDescriptorLong1, err = descriptor.ParseHiddenServiceDescriptorV2(string(backendDescriptorRaw))
 	if err != nil {
 		fmt.Printf("TestMain: %v\n", err.Error())
 		os.Exit(1)
@@ -88,7 +88,7 @@ func TestMain(m *testing.M) {
 		os.Exit(1)
 	}
 
-	backendDescriptorLong2, err = descriptor.ParseHiddenServiceDescriptor(string(backendDescriptorRaw))
+	backendDescriptorLong2, err = descriptor.ParseHiddenServiceDescriptorV2(string(backendDescriptorRaw))
 	if err != nil {
 		fmt.Printf("TestMain: %v\n", err.Error())
 		os.Exit(1)
@@ -162,11 +162,11 @@ func TestOnion_introductionPointsChanged(t *testing.T) {
 
 	var logger = common.NewNopLogger()
 
-	var oldDescs = []descriptor.HiddenServiceDescriptor{
+	var oldDescs = []descriptor.HiddenServiceDescriptorV2{
 		{
 			DescriptorID:          "oldDesc",
 			IntroductionPointsRaw: "oldIntros",
-			IntroductionPoints: []descriptor.IntroductionPoint{
+			IntroductionPoints: []descriptor.IntroductionPointV2{
 				{
 					Identifier: "testID",
 				},
@@ -174,11 +174,11 @@ func TestOnion_introductionPointsChanged(t *testing.T) {
 		},
 	}
 
-	var newDescs = []descriptor.HiddenServiceDescriptor{
+	var newDescs = []descriptor.HiddenServiceDescriptorV2{
 		{
 			DescriptorID:          "newDesc",
 			IntroductionPointsRaw: "newIntros",
-			IntroductionPoints: []descriptor.IntroductionPoint{
+			IntroductionPoints: []descriptor.IntroductionPointV2{
 				{
 					Identifier: "testID",
 				},
@@ -198,7 +198,7 @@ func TestOnion_introductionPointsChanged(t *testing.T) {
 			"Descriptors changed",
 			&Onion{
 				controller: &MockController{
-					FetchedDescriptors: map[string]*descriptor.HiddenServiceDescriptor{
+					FetchedDescriptors: map[string]*descriptor.HiddenServiceDescriptorV2{
 						"address": &newDescs[0],
 					},
 				},
@@ -221,7 +221,7 @@ func TestOnion_introductionPointsChanged(t *testing.T) {
 			"Descriptors not changed",
 			&Onion{
 				controller: &MockController{
-					FetchedDescriptors: map[string]*descriptor.HiddenServiceDescriptor{
+					FetchedDescriptors: map[string]*descriptor.HiddenServiceDescriptorV2{
 						"address": &oldDescs[0],
 					},
 				},
@@ -242,7 +242,7 @@ func TestOnion_introductionPointsChanged(t *testing.T) {
 			"No descriptors stored previously",
 			&Onion{
 				controller: &MockController{
-					FetchedDescriptors: map[string]*descriptor.HiddenServiceDescriptor{
+					FetchedDescriptors: map[string]*descriptor.HiddenServiceDescriptorV2{
 						"address": &newDescs[0],
 					},
 				},
@@ -309,17 +309,17 @@ func TestOnion_fetchBackendDescriptors(t *testing.T) {
 		name       string
 		controller *MockController
 
-		expectedDescs     []descriptor.HiddenServiceDescriptor
+		expectedDescs     []descriptor.HiddenServiceDescriptorV2
 		expectedErr       error
 		expectedIntrosLen int
 	}{
 		{
 			"OK",
 			&MockController{
-				FetchedDescriptors: map[string]*descriptor.HiddenServiceDescriptor{
+				FetchedDescriptors: map[string]*descriptor.HiddenServiceDescriptorV2{
 					"backend-1": {
 						DescriptorID: "backend-1-desc-id",
-						IntroductionPoints: []descriptor.IntroductionPoint{
+						IntroductionPoints: []descriptor.IntroductionPointV2{
 							{
 								Identifier: "8e2uej23ie2",
 							},
@@ -327,7 +327,7 @@ func TestOnion_fetchBackendDescriptors(t *testing.T) {
 					},
 					"backend-2": {
 						DescriptorID: "backend-2-desc-id",
-						IntroductionPoints: []descriptor.IntroductionPoint{
+						IntroductionPoints: []descriptor.IntroductionPointV2{
 							{
 								Identifier: "2323e323e23",
 							},
@@ -335,7 +335,7 @@ func TestOnion_fetchBackendDescriptors(t *testing.T) {
 					},
 					"backend-3": {
 						DescriptorID: "backend-3-desc-id",
-						IntroductionPoints: []descriptor.IntroductionPoint{
+						IntroductionPoints: []descriptor.IntroductionPointV2{
 							{
 								Identifier: "982ujn99j92",
 							},
@@ -343,10 +343,10 @@ func TestOnion_fetchBackendDescriptors(t *testing.T) {
 					},
 				},
 			},
-			[]descriptor.HiddenServiceDescriptor{
+			[]descriptor.HiddenServiceDescriptorV2{
 				{
 					DescriptorID: "backend-1-desc-id",
-					IntroductionPoints: []descriptor.IntroductionPoint{
+					IntroductionPoints: []descriptor.IntroductionPointV2{
 						{
 							Identifier: "8e2uej23ie2",
 						},
@@ -354,7 +354,7 @@ func TestOnion_fetchBackendDescriptors(t *testing.T) {
 				},
 				{
 					DescriptorID: "backend-2-desc-id",
-					IntroductionPoints: []descriptor.IntroductionPoint{
+					IntroductionPoints: []descriptor.IntroductionPointV2{
 						{
 							Identifier: "2323e323e23",
 						},
@@ -362,7 +362,7 @@ func TestOnion_fetchBackendDescriptors(t *testing.T) {
 				},
 				{
 					DescriptorID: "backend-3-desc-id",
-					IntroductionPoints: []descriptor.IntroductionPoint{
+					IntroductionPoints: []descriptor.IntroductionPointV2{
 						{
 							Identifier: "982ujn99j92",
 						},
@@ -393,7 +393,7 @@ func TestOnion_fetchBackendDescriptors(t *testing.T) {
 				t.Fatal("failed to create new onion")
 			}
 
-			var descs []descriptor.HiddenServiceDescriptor
+			var descs []descriptor.HiddenServiceDescriptorV2
 			var introsLen int
 			descs, introsLen, err = onion.fetchBackendDescriptors(context.Background())
 			if !reflect.DeepEqual(err, tt.expectedErr) {
@@ -420,7 +420,7 @@ func TestOnion_singleDescriptorGenerateAndPublish(t *testing.T) {
 	var testCases = []struct {
 		name               string
 		controller         *MockController
-		backendDescriptors []descriptor.HiddenServiceDescriptor
+		backendDescriptors []descriptor.HiddenServiceDescriptorV2
 		privateKey         *rsa.PrivateKey
 
 		expectedErr                   error
@@ -429,7 +429,7 @@ func TestOnion_singleDescriptorGenerateAndPublish(t *testing.T) {
 		{
 			"OK",
 			&MockController{},
-			[]descriptor.HiddenServiceDescriptor{*backendDescriptor1, *backendDescriptor2},
+			[]descriptor.HiddenServiceDescriptorV2{*backendDescriptor1, *backendDescriptor2},
 			privateKey,
 			nil,
 			"-----BEGIN MESSAGE-----\n" +
@@ -516,7 +516,7 @@ func TestOnion_singleDescriptorGenerateAndPublish(t *testing.T) {
 		{
 			"failure generating descriptor",
 			&MockController{},
-			[]descriptor.HiddenServiceDescriptor{*backendDescriptor1, *backendDescriptor2},
+			[]descriptor.HiddenServiceDescriptorV2{*backendDescriptor1, *backendDescriptor2},
 			func() *rsa.PrivateKey {
 				var pri = *privateKey
 				pri.E = 0
@@ -530,7 +530,7 @@ func TestOnion_singleDescriptorGenerateAndPublish(t *testing.T) {
 			&MockController{
 				ReturnedErr: errors.New("test error"),
 			},
-			[]descriptor.HiddenServiceDescriptor{*backendDescriptor1, *backendDescriptor2},
+			[]descriptor.HiddenServiceDescriptorV2{*backendDescriptor1, *backendDescriptor2},
 			privateKey,
 			errors.New("failed to post descriptor: test error"),
 			"",
@@ -552,8 +552,8 @@ func TestOnion_singleDescriptorGenerateAndPublish(t *testing.T) {
 				t.Errorf("expected %v got %v", tt.expectedErr, err)
 			}
 
-			var parsedDescriptor *descriptor.HiddenServiceDescriptor
-			parsedDescriptor, err = descriptor.ParseHiddenServiceDescriptor(tt.controller.PostedDescriptor)
+			var parsedDescriptor *descriptor.HiddenServiceDescriptorV2
+			parsedDescriptor, err = descriptor.ParseHiddenServiceDescriptorV2(tt.controller.PostedDescriptor)
 			if err != nil {
 				t.Fatal("failed to parse descriptor")
 			}
@@ -609,7 +609,7 @@ func TestOnion_multiDescriptorGenerateAndPublish(t *testing.T) {
 		name               string
 		controller         *MockController
 		hsdirFetcher       *MockHSDirFetcher
-		backendDescriptors []descriptor.HiddenServiceDescriptor
+		backendDescriptors []descriptor.HiddenServiceDescriptorV2
 		privateKey         *rsa.PrivateKey
 
 		expectedErr                  error
@@ -619,7 +619,7 @@ func TestOnion_multiDescriptorGenerateAndPublish(t *testing.T) {
 			"OK",
 			&MockController{},
 			hsdirFetcher,
-			[]descriptor.HiddenServiceDescriptor{*backendDescriptorLong1, *backendDescriptorLong2},
+			[]descriptor.HiddenServiceDescriptorV2{*backendDescriptorLong1, *backendDescriptorLong2},
 			privateKey,
 			nil,
 			map[string]string{
@@ -1415,7 +1415,7 @@ func TestOnion_multiDescriptorGenerateAndPublish(t *testing.T) {
 			"failure generating descriptor",
 			&MockController{},
 			hsdirFetcher,
-			[]descriptor.HiddenServiceDescriptor{*backendDescriptorLong1, *backendDescriptorLong2},
+			[]descriptor.HiddenServiceDescriptorV2{*backendDescriptorLong1, *backendDescriptorLong2},
 			func() *rsa.PrivateKey {
 				var pri = *privateKey
 				pri.E = 0
@@ -1430,7 +1430,7 @@ func TestOnion_multiDescriptorGenerateAndPublish(t *testing.T) {
 			&MockHSDirFetcher{
 				returnErr: errors.New("test error"),
 			},
-			[]descriptor.HiddenServiceDescriptor{*backendDescriptorLong1, *backendDescriptorLong2},
+			[]descriptor.HiddenServiceDescriptorV2{*backendDescriptorLong1, *backendDescriptorLong2},
 			privateKey,
 			errors.New("failed to calculate responsible HSDirs: test error"),
 			nil,
@@ -1441,7 +1441,7 @@ func TestOnion_multiDescriptorGenerateAndPublish(t *testing.T) {
 				ReturnedErr: errors.New("test error"),
 			},
 			hsdirFetcher,
-			[]descriptor.HiddenServiceDescriptor{*backendDescriptorLong1, *backendDescriptorLong2},
+			[]descriptor.HiddenServiceDescriptorV2{*backendDescriptorLong1, *backendDescriptorLong2},
 			privateKey,
 			nil,
 			nil,
@@ -1464,7 +1464,7 @@ func TestOnion_multiDescriptorGenerateAndPublish(t *testing.T) {
 			}
 
 			for hsdir, postedDescriptor := range tt.controller.PostedDescriptors {
-				var parsedDescriptor, err = descriptor.ParseHiddenServiceDescriptor(postedDescriptor)
+				var parsedDescriptor, err = descriptor.ParseHiddenServiceDescriptorV2(postedDescriptor)
 				if err != nil {
 					t.Fatal("failed to parse descriptor")
 				}

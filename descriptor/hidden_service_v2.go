@@ -18,9 +18,9 @@ import (
 	"github.com/csucu/onionspread/common"
 )
 
-// HiddenServiceDescriptor represents a v2 hidden service descriptor as defined in
+// HiddenServiceDescriptorV2 represents a v2 hidden service descriptor as defined in
 // https://github.com/torproject/torspec/blob/master/rend-spec-v2.txt
-type HiddenServiceDescriptor struct {
+type HiddenServiceDescriptorV2 struct {
 	DescriptorID          string
 	Version               int
 	PermanentKey          string
@@ -28,12 +28,12 @@ type HiddenServiceDescriptor struct {
 	Published             time.Time
 	ProtocolVersions      []int
 	IntroductionPointsRaw string
-	IntroductionPoints    []IntroductionPoint
+	IntroductionPoints    []IntroductionPointV2
 	Signature             string
 }
 
-// IntroductionPoint represents a introduction point
-type IntroductionPoint struct {
+// IntroductionPointV2 represents a introduction point
+type IntroductionPointV2 struct {
 	Identifier string
 	Address    net.IP
 	Port       int
@@ -42,8 +42,8 @@ type IntroductionPoint struct {
 	Raw        string
 }
 
-func ParseHiddenServiceDescriptor(descriptorRaw string) (*HiddenServiceDescriptor, error) {
-	var descriptor = &HiddenServiceDescriptor{}
+func ParseHiddenServiceDescriptorV2(descriptorRaw string) (*HiddenServiceDescriptorV2, error) {
+	var descriptor = &HiddenServiceDescriptorV2{}
 	var lines = strings.Split(descriptorRaw, "\n")
 	var err error
 
@@ -86,8 +86,8 @@ func ParseHiddenServiceDescriptor(descriptorRaw string) (*HiddenServiceDescripto
 }
 
 // parseIntroductionPoints parses the introduction points block given in a descriptor
-func parseIntroductionPoints(data string) ([]IntroductionPoint, error) {
-	var introductionPoints []IntroductionPoint
+func parseIntroductionPoints(data string) ([]IntroductionPointV2, error) {
+	var introductionPoints []IntroductionPointV2
 
 	var block, rest = pem.Decode([]byte(data))
 	if len(rest) > 0 {
@@ -99,7 +99,7 @@ func parseIntroductionPoints(data string) ([]IntroductionPoint, error) {
 	var err error
 
 	for {
-		var introductionPoint *IntroductionPoint
+		var introductionPoint *IntroductionPointV2
 		introductionPoint, raw, EOF, err = extractIntroductionPoints(raw)
 		if err != nil {
 			return introductionPoints, err
@@ -116,7 +116,7 @@ func parseIntroductionPoints(data string) ([]IntroductionPoint, error) {
 }
 
 // extractIntroductionPoints extracts a single introduction point from the provided raw introduction point block
-func extractIntroductionPoints(data string) (*IntroductionPoint, string, bool, error) {
+func extractIntroductionPoints(data string) (*IntroductionPointV2, string, bool, error) {
 	if len(data) == 0 {
 		return nil, data, true, nil
 	}
@@ -148,8 +148,8 @@ func extractIntroductionPoints(data string) (*IntroductionPoint, string, bool, e
 }
 
 // parseIntroductionPoint returns an introduction point object given its raw representation
-func parseIntroductionPoint(data string) (*IntroductionPoint, error) {
-	var introductionPoint = &IntroductionPoint{}
+func parseIntroductionPoint(data string) (*IntroductionPointV2, error) {
+	var introductionPoint = &IntroductionPointV2{}
 	var lines = strings.Split(data, "\n")
 	var err error
 
@@ -200,8 +200,8 @@ func extractEntry(end string, lines []string) (string, error) {
 	return entry, nil
 }
 
-// GenerateDescriptorRaw generates a raw signed hidden service descriptor
-func GenerateDescriptorRaw(introductionPoints []IntroductionPoint, publishedTime time.Time, replica byte,
+// GenerateDescriptorRawV2 generates a raw signed hidden service descriptor
+func GenerateDescriptorRawV2(introductionPoints []IntroductionPointV2, publishedTime time.Time, replica byte,
 	deviation uint8, descriptorCookie string, permanentKey *rsa.PublicKey, privateKey *rsa.PrivateKey, permID []byte, descriptorID []byte) ([]byte, error) {
 	var err error
 	if permID == nil {
@@ -261,7 +261,7 @@ func GenerateDescriptorRaw(introductionPoints []IntroductionPoint, publishedTime
 	return b.Bytes(), nil
 }
 
-func createIntroductionPointsBloc(introductionPoints []IntroductionPoint) []byte {
+func createIntroductionPointsBloc(introductionPoints []IntroductionPointV2) []byte {
 	var introductionPointsRaw []byte
 	for _, IntroductionPoint := range introductionPoints {
 		introductionPointsRaw = append(introductionPointsRaw, []byte(IntroductionPoint.Raw)...)

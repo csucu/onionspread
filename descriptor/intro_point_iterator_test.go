@@ -6,7 +6,7 @@ import (
 )
 
 func TestSortIntroductionPoints(t *testing.T) {
-	var introPoints = [][]IntroductionPoint{
+	var introPoints = [][]IntroductionPointV2{
 		{
 			{Identifier: "a1"}, {Identifier: "a2"}, {Identifier: "a3"},
 			{Identifier: "a4"}, {Identifier: "a5"}, {Identifier: "a6"},
@@ -24,7 +24,7 @@ func TestSortIntroductionPoints(t *testing.T) {
 		},
 	}
 
-	var want = []IntroductionPoint{
+	var want = []IntroductionPointV2{
 		{Identifier: "a1"}, {Identifier: "b1"}, {Identifier: "c1"}, {Identifier: "a2"},
 		{Identifier: "b2"}, {Identifier: "c2"}, {Identifier: "a3"}, {Identifier: "b3"},
 		{Identifier: "c3"}, {Identifier: "a4"}, {Identifier: "b4"}, {Identifier: "c4"},
@@ -39,7 +39,7 @@ func TestSortIntroductionPoints(t *testing.T) {
 }
 
 func TestIntroductionPointsIteratorNext(t *testing.T) {
-	var introPoints = [][]IntroductionPoint{
+	var introPoints = [][]IntroductionPointV2{
 		{
 			{Identifier: "a1"}, {Identifier: "a2"}, {Identifier: "a3"},
 			{Identifier: "a4"}, {Identifier: "a5"}, {Identifier: "a6"},

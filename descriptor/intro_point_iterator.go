@@ -2,15 +2,15 @@ package descriptor
 
 // IntroductionPointsIterator is a stateful iterator for introduction points
 type IntroductionPointsIterator struct {
-	introductionPoints []IntroductionPoint
+	introductionPoints []IntroductionPointV2
 
 	currentPos int
 }
 
 // sortIntroductionPoints sorts introduction points in a round robin fashion given a set of
 // introduction points per backend instance.
-func sortIntroductionPoints(backendIntroductionPoints [][]IntroductionPoint) []IntroductionPoint {
-	var introductionPoints []IntroductionPoint
+func sortIntroductionPoints(backendIntroductionPoints [][]IntroductionPointV2) []IntroductionPointV2 {
+	var introductionPoints []IntroductionPointV2
 
 	// get max len
 	var maxLen = 0
@@ -34,8 +34,8 @@ func sortIntroductionPoints(backendIntroductionPoints [][]IntroductionPoint) []I
 	return introductionPoints
 }
 
-// Next returns the next IntroductionPoint in the cycle
-func (ips *IntroductionPointsIterator) Next() []IntroductionPoint {
+// Next returns the next IntroductionPointV2 in the cycle
+func (ips *IntroductionPointsIterator) Next() []IntroductionPointV2 {
 	var start = ips.currentPos
 	var len = len(ips.introductionPoints)
 
@@ -53,7 +53,7 @@ func (ips *IntroductionPointsIterator) Next() []IntroductionPoint {
 }
 
 // NewIntroductionPointsIterator returns a new NewIntroductionPointsIterator
-func NewIntroductionPointsIterator(introductionPoints [][]IntroductionPoint) *IntroductionPointsIterator {
+func NewIntroductionPointsIterator(introductionPoints [][]IntroductionPointV2) *IntroductionPointsIterator {
 	return &IntroductionPointsIterator{
 		currentPos:         0,
 		introductionPoints: sortIntroductionPoints(introductionPoints),

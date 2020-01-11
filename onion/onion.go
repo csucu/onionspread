@@ -41,7 +41,7 @@ type Onion struct {
 // backendOnions represents a backend hidden service that will be used for balancing
 type backendOnions struct {
 	addresses                       []string
-	descriptors                     []descriptor.HiddenServiceDescriptor
+	descriptors                     []descriptor.HiddenServiceDescriptorV2
 	totalNumberOfIntroductionPoints int
 	newDescriptorsAvailable         bool
 }
@@ -118,7 +118,7 @@ func (o *Onion) balance(ctx context.Context) error {
 	return nil
 }
 
-func (o *Onion) fetchBackendDescriptors(ctx context.Context) ([]descriptor.HiddenServiceDescriptor, int, error) {
+func (o *Onion) fetchBackendDescriptors(ctx context.Context) ([]descriptor.HiddenServiceDescriptorV2, int, error) {
 	o.logger.Debugf("Onion %s: fetching backend descriptors", o.address)
 	select {
 	case <-ctx.Done():
@@ -126,7 +126,7 @@ func (o *Onion) fetchBackendDescriptors(ctx context.Context) ([]descriptor.Hidde
 	default:
 	}
 
-	var backendDescriptors []descriptor.HiddenServiceDescriptor
+	var backendDescriptors []descriptor.HiddenServiceDescriptorV2
 	var totalNumOfIntroPoints = 0
 
 	for _, address := range o.backendOnions.addresses {
@@ -154,9 +154,9 @@ func (o *Onion) fetchBackendDescriptors(ctx context.Context) ([]descriptor.Hidde
 }
 
 // singleDescriptorGenerateAndPublish uses the same set of introduction points for all the responsible hsdirs
-func (o *Onion) singleDescriptorGenerateAndPublish(backendDescriptors []descriptor.HiddenServiceDescriptor) error {
+func (o *Onion) singleDescriptorGenerateAndPublish(backendDescriptors []descriptor.HiddenServiceDescriptorV2) error {
 	o.logger.Debugf("Onion %s: publishing a single descriptor to all hsdirs", o.address)
-	var introductionPoints []descriptor.IntroductionPoint
+	var introductionPoints []descriptor.IntroductionPointV2
 	for _, desc := range backendDescriptors {
 		introductionPoints = append(introductionPoints, desc.IntroductionPoints...)
 	}
@@ -164,7 +164,7 @@ func (o *Onion) singleDescriptorGenerateAndPublish(backendDescriptors []descript
 	var now = o.time.Now()
 	var i byte
 	for i = 0; i < replicaSetSize; i++ {
-		var balancedDescriptor, err = descriptor.GenerateDescriptorRaw(introductionPoints, now, i, 0,
+		var balancedDescriptor, err = descriptor.GenerateDescriptorRawV2(introductionPoints, now, i, 0,
 			"", o.publicKey, o.privateKey, nil, nil)
 		if err != nil {
 			return fmt.Errorf("failed to generate descriptor: %v", err)
@@ -180,9 +180,9 @@ func (o *Onion) singleDescriptorGenerateAndPublish(backendDescriptors []descript
 }
 
 // multiDescriptorGenerateAndPublish iterates the introduction points for each responsible hsdirs
-func (o *Onion) multiDescriptorGenerateAndPublish(backendDescriptors []descriptor.HiddenServiceDescriptor) error {
+func (o *Onion) multiDescriptorGenerateAndPublish(backendDescriptors []descriptor.HiddenServiceDescriptorV2) error {
 	o.logger.Debugf("Onion %s: publishing multiple descriptors to all hsdirs", o.address)
-	var introductionPoints [][]descriptor.IntroductionPoint
+	var introductionPoints [][]descriptor.IntroductionPointV2
 	for _, desc := range backendDescriptors {
 		introductionPoints = append(introductionPoints, desc.IntroductionPoints)
 	}
@@ -205,7 +205,7 @@ func (o *Onion) multiDescriptorGenerateAndPublish(backendDescriptors []descripto
 
 		// Publish a different descriptor to each responsible directory
 		for _, hsDir := range responsibleHSDirs {
-			var balancedDescriptor, err = descriptor.GenerateDescriptorRaw(introductionPointItr.Next(), now, i,
+			var balancedDescriptor, err = descriptor.GenerateDescriptorRawV2(introductionPointItr.Next(), now, i,
 				0, "", o.publicKey, o.privateKey, o.permanentID, descID)
 			if err != nil {
 				return fmt.Errorf("failed to generate descriptor: %v", err)
