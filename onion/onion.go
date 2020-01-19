@@ -49,12 +49,12 @@ type backendOnions struct {
 // Start starts the onion service ticker
 func (o *Onion) Start(interval time.Duration) error {
 	o.logger.Infof("Onion %s: starting service", o.address)
-	var ctx = context.Background()
+	ctx := context.Background()
 
-	var ticker = time.NewTicker(interval) // change publish interval to intro fetch interval
+	ticker := time.NewTicker(interval) // change publish interval to intro fetch interval
 	for {
 		ctx, _ = context.WithTimeout(ctx, time.Second*45)
-		var introPointsChanged, err = o.introductionPointsChanged(ctx)
+		introPointsChanged, err := o.introductionPointsChanged(ctx)
 		if err != nil {
 			o.logger.Errorf("Onion %s: failed to check if introduction points have changed: %v", o.address, err)
 			// continue or just carry on?
@@ -161,10 +161,10 @@ func (o *Onion) singleDescriptorGenerateAndPublish(backendDescriptors []descript
 		introductionPoints = append(introductionPoints, desc.IntroductionPoints...)
 	}
 
-	var now = o.time.Now()
+	now := o.time.Now()
 	var i byte
 	for i = 0; i < replicaSetSize; i++ {
-		var balancedDescriptor, err = descriptor.GenerateDescriptorRaw(introductionPoints, now, i, 0,
+		balancedDescriptor, err := descriptor.GenerateDescriptorRaw(introductionPoints, now, i, 0,
 			"", o.publicKey, o.privateKey, nil, nil)
 		if err != nil {
 			return fmt.Errorf("failed to generate descriptor: %v", err)
@@ -186,26 +186,25 @@ func (o *Onion) multiDescriptorGenerateAndPublish(backendDescriptors []descripto
 	for _, desc := range backendDescriptors {
 		introductionPoints = append(introductionPoints, desc.IntroductionPoints)
 	}
-	var introductionPointItr = descriptor.NewIntroductionPointsIterator(introductionPoints)
+	introductionPointItr := descriptor.NewIntroductionPointsIterator(introductionPoints)
 
 	// Calculate responsible hs dirs per replica then generate a new deecriptor then publish
-	var now = o.time.Now()
+	now := o.time.Now()
 	var i byte
 	for i = 0; i < replicaSetSize; i++ {
-		var descID, err = common.CalculateDescriptorID(o.permanentID, now.Unix(), i, 0, "")
+		descID, err := common.CalculateDescriptorID(o.permanentID, now.Unix(), i, 0, "")
 		if err != nil {
 			return fmt.Errorf("failed to calculate descriptor ID: %v", err)
 		}
 
-		var responsibleHSDirs []descriptor.RouterStatusEntry
-		responsibleHSDirs, err = o.hsDirFetcher.CalculateResponsibleHSDirs(string(descID))
+		responsibleHSDirs, err := o.hsDirFetcher.CalculateResponsibleHSDirs(string(descID))
 		if err != nil {
 			return fmt.Errorf("failed to calculate responsible HSDirs: %v", err)
 		}
 
 		// Publish a different descriptor to each responsible directory
 		for _, hsDir := range responsibleHSDirs {
-			var balancedDescriptor, err = descriptor.GenerateDescriptorRaw(introductionPointItr.Next(), now, i,
+			balancedDescriptor, err := descriptor.GenerateDescriptorRaw(introductionPointItr.Next(), now, i,
 				0, "", o.publicKey, o.privateKey, o.permanentID, descID)
 			if err != nil {
 				return fmt.Errorf("failed to generate descriptor: %v", err)
@@ -222,7 +221,7 @@ func (o *Onion) multiDescriptorGenerateAndPublish(backendDescriptors []descripto
 }
 
 func (o *Onion) descriptorIDChangingSoon() bool {
-	var secondsValid = common.DescriptorIDValidUntil(o.permanentID, o.time.Now().Unix())
+	secondsValid := common.DescriptorIDValidUntil(o.permanentID, o.time.Now().Unix())
 
 	if secondsValid < descriptorOverlapPeriod {
 		o.logger.Debugf("Onion %s: descriptor ID changing soon", o.address)
@@ -246,7 +245,7 @@ func (o *Onion) notPublishedDescriptorRecently() bool {
 }
 
 func (o *Onion) introductionPointsChanged(ctx context.Context) (bool, error) {
-	var backendDescriptors, totalNumOfintoPoints, err = o.fetchBackendDescriptors(ctx)
+	backendDescriptors, totalNumOfintoPoints, err := o.fetchBackendDescriptors(ctx)
 	if err != nil {
 		return false, err
 	}
@@ -274,7 +273,7 @@ func (o *Onion) introductionPointsChanged(ctx context.Context) (bool, error) {
 
 // NewOnion constructs a new master hidden service that will balance a set of backend services
 func NewOnion(controller IController, backendAddresses []string, publicKey *rsa.PublicKey, privateKey *rsa.PrivateKey, fetcher IHSDirFetcher, logger *zap.SugaredLogger, time common.ITimeProvider, publishInterval time.Duration) (*Onion, error) {
-	var permanentID, err = common.CalculatePermanentID(*publicKey)
+	permanentID, err := common.CalculatePermanentID(*publicKey)
 	if err != nil {
 		return nil, fmt.Errorf("failed to calculate permanent ID: %v", err)
 	}

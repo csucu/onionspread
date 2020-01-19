@@ -71,7 +71,7 @@ func extractRouterStatusEntry(data string) (*RouterStatusEntry, string, bool, er
 		return nil, data, true, nil
 	}
 
-	var start = 0
+	start := 0
 	if !strings.HasPrefix(data, string("r ")) {
 		start = strings.Index(data, string("\nr "))
 		if start < 0 {
@@ -80,7 +80,7 @@ func extractRouterStatusEntry(data string) (*RouterStatusEntry, string, bool, er
 		start += 1
 	}
 
-	var end = strings.Index(data[start:], string("\nr "))
+	end := strings.Index(data[start:], string("\nr "))
 	if end >= 0 {
 		var entry, err = parseRouterStatusEntry(data[start : start+end+1])
 		if err != nil {
@@ -89,7 +89,7 @@ func extractRouterStatusEntry(data string) (*RouterStatusEntry, string, bool, er
 		return entry, data[start+end+1:], false, nil
 	}
 
-	var entry, err = parseRouterStatusEntry(data[start:])
+	entry, err := parseRouterStatusEntry(data[start:])
 	if err != nil {
 		return nil, "", true, err
 	}
@@ -98,12 +98,12 @@ func extractRouterStatusEntry(data string) (*RouterStatusEntry, string, bool, er
 }
 
 func parseRouterStatusEntry(routerStatusEntryRaw string) (*RouterStatusEntry, error) {
-	var routerStatusEntry = RouterStatusEntry{}
-	var lines = strings.Split(routerStatusEntryRaw, "\n")
+	routerStatusEntry := RouterStatusEntry{}
+	lines := strings.Split(routerStatusEntryRaw, "\n")
 	for _, line := range lines {
 		var err error
 
-		var words = strings.Split(line, " ")
+		words := strings.Split(line, " ")
 		switch words[0] {
 		case "r":
 			//r" SP nickname SP identity SP digest SP publication SP IP SP ORPort SP DirPort NL
@@ -119,8 +119,7 @@ func parseRouterStatusEntry(routerStatusEntryRaw string) (*RouterStatusEntry, er
 				return nil, err
 			}
 
-			var pubTime time.Time
-			pubTime, err = time.Parse("2006-01-02 15:04:05", strings.Join(words[4:6], " "))
+			pubTime, err := time.Parse("2006-01-02 15:04:05", strings.Join(words[4:6], " "))
 			if err != nil {
 				return nil, err
 			}
@@ -162,7 +161,7 @@ func parseRouterStatusEntry(routerStatusEntryRaw string) (*RouterStatusEntry, er
 }
 
 func parseFlags(flags []string) RouterFlags {
-	var parsedflags = RouterFlags{}
+	parsedflags := RouterFlags{}
 	for _, flag := range flags {
 		switch flag {
 		case "Authority":

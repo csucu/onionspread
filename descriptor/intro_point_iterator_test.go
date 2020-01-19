@@ -6,7 +6,7 @@ import (
 )
 
 func TestSortIntroductionPoints(t *testing.T) {
-	var introPoints = [][]IntroductionPoint{
+	introPoints := [][]IntroductionPoint{
 		{
 			{Identifier: "a1"}, {Identifier: "a2"}, {Identifier: "a3"},
 			{Identifier: "a4"}, {Identifier: "a5"}, {Identifier: "a6"},
@@ -24,7 +24,7 @@ func TestSortIntroductionPoints(t *testing.T) {
 		},
 	}
 
-	var want = []IntroductionPoint{
+	want := []IntroductionPoint{
 		{Identifier: "a1"}, {Identifier: "b1"}, {Identifier: "c1"}, {Identifier: "a2"},
 		{Identifier: "b2"}, {Identifier: "c2"}, {Identifier: "a3"}, {Identifier: "b3"},
 		{Identifier: "c3"}, {Identifier: "a4"}, {Identifier: "b4"}, {Identifier: "c4"},
@@ -39,7 +39,7 @@ func TestSortIntroductionPoints(t *testing.T) {
 }
 
 func TestIntroductionPointsIteratorNext(t *testing.T) {
-	var introPoints = [][]IntroductionPoint{
+	introPoints := [][]IntroductionPoint{
 		{
 			{Identifier: "a1"}, {Identifier: "a2"}, {Identifier: "a3"},
 			{Identifier: "a4"}, {Identifier: "a5"}, {Identifier: "a6"},
@@ -57,9 +57,9 @@ func TestIntroductionPointsIteratorNext(t *testing.T) {
 		},
 	}
 
-	var itr = NewIntroductionPointsIterator(introPoints)
+	itr := NewIntroductionPointsIterator(introPoints)
 
-	var want = sortIntroductionPoints(introPoints)
+	want := sortIntroductionPoints(introPoints)
 	if got := itr.Next(); !reflect.DeepEqual(got, want[0:10]) {
 		t.Errorf("expected %v got %v", want, got)
 	}

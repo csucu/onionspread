@@ -14,9 +14,9 @@ import (
 func TestHSDirFetcher_update(t *testing.T) {
 	t.Parallel()
 
-	var logger = common.NewNopLogger()
+	logger := common.NewNopLogger()
 
-	var testCases = []struct {
+	testCases := []struct {
 		name       string
 		controller IController
 
@@ -79,11 +79,11 @@ func TestHSDirFetcher_update(t *testing.T) {
 	}
 
 	for _, testCase := range testCases {
-		var tt = testCase
+		tt := testCase
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			var hsdirFetcher = NewHSDirFetcher(tt.controller, logger)
+			hsdirFetcher := NewHSDirFetcher(tt.controller, logger)
 			if err := hsdirFetcher.update(); !reflect.DeepEqual(err, tt.expectedErr) {
 				t.Errorf("expected %v got %v", tt.expectedErr, err)
 			}
@@ -98,16 +98,16 @@ func TestHSDirFetcher_update(t *testing.T) {
 func TestCalculateResponsibleHSDirs(t *testing.T) {
 	t.Parallel()
 
-	var controller = &MockController{
+	controller := &MockController{
 		ReturnedRouterStatusEntries: routerStatusEntries,
 	}
 
-	var hsdirFetcher = NewHSDirFetcher(controller, common.NewNopLogger())
+	hsdirFetcher := NewHSDirFetcher(controller, common.NewNopLogger())
 	if err := hsdirFetcher.update(); err != nil {
 		t.Fatalf("failed to update hsdir fetcher: %v", err)
 	}
 
-	var testCases = []struct {
+	testCases := []struct {
 		name  string
 		input string
 
@@ -313,11 +313,11 @@ func TestCalculateResponsibleHSDirs(t *testing.T) {
 	}
 
 	for _, tt := range testCases {
-		var tt = tt
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			var got, err = hsdirFetcher.CalculateResponsibleHSDirs(tt.input)
+			got, err := hsdirFetcher.CalculateResponsibleHSDirs(tt.input)
 			if !reflect.DeepEqual(err, tt.wantErr) {
 				t.Errorf("expected %v, got %v", tt.wantErr, err)
 			}

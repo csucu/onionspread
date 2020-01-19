@@ -37,14 +37,14 @@ import (
 func TestParseRouterStatusEntry(t *testing.T) {
 	t.Parallel()
 
-	var entry = "r seele AAoQ1DAR6kkoo19hBAX5K0QztNw QNpJa2dktdn8SvNo30v/2B6s5Ko 2018-08-03 07:40:21 67.161.31.147 9001 0\n" +
+	entry := "r seele AAoQ1DAR6kkoo19hBAX5K0QztNw QNpJa2dktdn8SvNo30v/2B6s5Ko 2018-08-03 07:40:21 67.161.31.147 9001 0\n" +
 		"s Fast HSDir Running Stable V2Dir Valid\nw Bandwidth=27"
-	var got, err = parseRouterStatusEntry(entry)
+	got, err := parseRouterStatusEntry(entry)
 	if err != nil {
 		t.Fatalf("failed to parse router status entry: %v", err)
 	}
 
-	var want = RouterStatusEntry{
+	want := RouterStatusEntry{
 		Nickname:    "seele",
 		Fingerprint: "000A10D43011EA4928A35F610405F92B4433B4DC",
 		Digest:      "40DA496B6764B5D9FC4AF368DF4BFFD81EACE4AA",
@@ -73,7 +73,7 @@ func TestParseRouterStatusEntriesRaw(t *testing.T) {
 
 	t.Run("short input", func(t *testing.T) {
 		t.Parallel()
-		var input = "\nr seele AAoQ1DAR6kkoo19hBAX5K0QztNw QNpJa2dktdn8SvNo30v/2B6s5Ko 2018-08-03 07:40:21 67.161.31.147 9001 0\n" +
+		input := "\nr seele AAoQ1DAR6kkoo19hBAX5K0QztNw QNpJa2dktdn8SvNo30v/2B6s5Ko 2018-08-03 07:40:21 67.161.31.147 9001 0\n" +
 			"s Fast HSDir Running Stable V2Dir Valid\n" +
 			"w Bandwidth=27\n" +
 			"r PutoElQueLee293884 AAwffNL+oHO5EdyUoWAOwvEX3ws 5QplY/hILpnKQmaLY2a0XDQqWPc 2018-08-03 01:31:37 174.127.217.73 55554 0\n" +
@@ -85,12 +85,12 @@ func TestParseRouterStatusEntriesRaw(t *testing.T) {
 			"r UbuntuCore239 ACsCTiSjDxE5gvyxff4FtvOMDHk ZPuLd7UfaBkIzBno5zkv6tFeVm0 2018-08-03 08:10:55 95.236.11.166 40889 0\n" +
 			"s Fast Running V2Dir Valid\n" +
 			"w Bandwidth=14"
-		var got, err = ParseRouterStatusEntriesRaw(input)
+		got, err := ParseRouterStatusEntriesRaw(input)
 		if err != nil {
 			t.Fatalf("failed to parse router status entries: %v", err)
 		}
 
-		var want = []RouterStatusEntry{
+		want := []RouterStatusEntry{
 			{
 				Nickname:    "seele",
 				Fingerprint: "000A10D43011EA4928A35F610405F92B4433B4DC",
@@ -172,7 +172,7 @@ func TestParseRouterStatusEntriesRaw(t *testing.T) {
 
 	t.Run("long input", func(t *testing.T) {
 		t.Parallel()
-		var got, err = ParseRouterStatusEntriesRaw(testRouterStatusEntriesRaw)
+		got, err := ParseRouterStatusEntriesRaw(testRouterStatusEntriesRaw)
 		if err != nil {
 			t.Fatalf("failed to parse router status entries: %v", err)
 		}
@@ -186,8 +186,8 @@ func TestParseRouterStatusEntriesRaw(t *testing.T) {
 func TestParseFlags(t *testing.T) {
 	t.Parallel()
 
-	var got = parseFlags([]string{"Fast", "HSDir", "Running", "Stable", "V2Dir", "Valid"})
-	var want = RouterFlags{
+	got := parseFlags([]string{"Fast", "HSDir", "Running", "Stable", "V2Dir", "Valid"})
+	want := RouterFlags{
 		Fast:    true,
 		HSDir:   true,
 		Running: true,

@@ -22,7 +22,7 @@ func NewLogger(debugMode bool, logFilePath string) (*zap.SugaredLogger, error) {
 
 	conf.DisableStacktrace = true
 
-	var logger, err = conf.Build()
+	logger, err := conf.Build()
 	if err != nil {
 		return nil, err
 	}

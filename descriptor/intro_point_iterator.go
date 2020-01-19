@@ -13,9 +13,9 @@ func sortIntroductionPoints(backendIntroductionPoints [][]IntroductionPoint) []I
 	var introductionPoints []IntroductionPoint
 
 	// get max len
-	var maxLen = 0
+	maxLen := 0
 	for _, introductionPoints := range backendIntroductionPoints {
-		var len = len(introductionPoints)
+		len := len(introductionPoints)
 		if len > maxLen {
 			maxLen = len
 		}
@@ -36,15 +36,15 @@ func sortIntroductionPoints(backendIntroductionPoints [][]IntroductionPoint) []I
 
 // Next returns the next IntroductionPoint in the cycle
 func (ips *IntroductionPointsIterator) Next() []IntroductionPoint {
-	var start = ips.currentPos
-	var len = len(ips.introductionPoints)
+	start := ips.currentPos
+	len := len(ips.introductionPoints)
 
 	ips.currentPos = ips.currentPos + 10
 	if ips.currentPos <= len {
 		return ips.introductionPoints[start:ips.currentPos]
 	}
 
-	var next = ips.introductionPoints[start:len]
+	next := ips.introductionPoints[start:len]
 
 	ips.currentPos = ips.currentPos % len
 	next = append(next, ips.introductionPoints[0:ips.currentPos]...)

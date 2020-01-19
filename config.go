@@ -41,13 +41,13 @@ func (c *Config) isValid() error {
 
 // loadConfig returns a config object given the config file
 func loadConfig(filename *string) (*Config, error) {
-	var config Config
 	configFile, err := os.Open(*filename)
 	defer configFile.Close()
 	if err != nil {
 		return nil, err
 	}
 
+	var config Config
 	var jsonParser = json.NewDecoder(configFile)
 	jsonParser.Decode(&config)
 

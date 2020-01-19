@@ -26,7 +26,7 @@ var (
 )
 
 func TestMain(m *testing.M) {
-	var routerStatusesBytes, err = ioutil.ReadFile("../testdata/routerStatusEntriesShort.txt")
+	routerStatusesBytes, err := ioutil.ReadFile("../testdata/routerStatusEntriesShort.txt")
 	if err != nil {
 		fmt.Printf("TestMain: %v\n", err.Error())
 		os.Exit(1)
@@ -45,8 +45,7 @@ func TestMain(m *testing.M) {
 	}
 
 	//Desc 1
-	var backendDescriptorRaw []byte
-	backendDescriptorRaw, err = ioutil.ReadFile("../testdata/desc.txt")
+	backendDescriptorRaw, err := ioutil.ReadFile("../testdata/desc.txt")
 	if err != nil {
 		fmt.Printf("TestMain: %v\n", err.Error())
 		os.Exit(1)
@@ -100,7 +99,7 @@ func TestMain(m *testing.M) {
 func TestDescriptorIDChangingSoon(t *testing.T) {
 	t.Parallel()
 
-	var mockTime = &common.MockTimeProvider{}
+	mockTime := &common.MockTimeProvider{}
 	mockTime.Set(time.Date(2015, time.June, 25, 24, 0, 3, 4, time.UTC))
 
 	var onion, err = NewOnion(nil, []string{}, publicKey, privateKey, nil, common.NewNopLogger(), mockTime, 0)
@@ -116,7 +115,7 @@ func TestDescriptorIDChangingSoon(t *testing.T) {
 func TestNotPublishedDescriptorRecently(t *testing.T) {
 	t.Parallel()
 
-	var testCases = []struct {
+	testCases := []struct {
 		name            string
 		lastPublishTime int64
 		want            bool
@@ -139,7 +138,7 @@ func TestNotPublishedDescriptorRecently(t *testing.T) {
 	}
 
 	for _, tt := range testCases {
-		var tt = tt
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
@@ -160,9 +159,9 @@ func TestNotPublishedDescriptorRecently(t *testing.T) {
 func TestOnion_introductionPointsChanged(t *testing.T) {
 	t.Parallel()
 
-	var logger = common.NewNopLogger()
+	logger := common.NewNopLogger()
 
-	var oldDescs = []descriptor.HiddenServiceDescriptor{
+	oldDescs := []descriptor.HiddenServiceDescriptor{
 		{
 			DescriptorID:          "oldDesc",
 			IntroductionPointsRaw: "oldIntros",
@@ -174,7 +173,7 @@ func TestOnion_introductionPointsChanged(t *testing.T) {
 		},
 	}
 
-	var newDescs = []descriptor.HiddenServiceDescriptor{
+	newDescs := []descriptor.HiddenServiceDescriptor{
 		{
 			DescriptorID:          "newDesc",
 			IntroductionPointsRaw: "newIntros",
@@ -186,7 +185,7 @@ func TestOnion_introductionPointsChanged(t *testing.T) {
 		},
 	}
 
-	var testCases = []struct {
+	testCases := []struct {
 		name  string
 		onion *Onion
 
@@ -280,11 +279,11 @@ func TestOnion_introductionPointsChanged(t *testing.T) {
 	}
 
 	for _, tt := range testCases {
-		var tt = tt
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			var got, err = tt.onion.introductionPointsChanged(context.Background())
+			got, err := tt.onion.introductionPointsChanged(context.Background())
 			if !reflect.DeepEqual(err, tt.expectedErr) {
 				t.Errorf("expected %v got %v", tt.expectedErr, err)
 			}
@@ -303,9 +302,9 @@ func TestOnion_introductionPointsChanged(t *testing.T) {
 func TestOnion_fetchBackendDescriptors(t *testing.T) {
 	t.Parallel()
 
-	var logger = common.NewNopLogger()
+	logger := common.NewNopLogger()
 
-	var testCases = []struct {
+	testCases := []struct {
 		name       string
 		controller *MockController
 
@@ -384,18 +383,16 @@ func TestOnion_fetchBackendDescriptors(t *testing.T) {
 	}
 
 	for _, tt := range testCases {
-		var tt = tt
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			var onion, err = NewOnion(tt.controller, []string{"backend-1", "backend-2", "backend-3"}, publicKey, privateKey, nil, logger, common.NewTimeProvider(), 0)
+			onion, err := NewOnion(tt.controller, []string{"backend-1", "backend-2", "backend-3"}, publicKey, privateKey, nil, logger, common.NewTimeProvider(), 0)
 			if err != nil {
 				t.Fatal("failed to create new onion")
 			}
 
-			var descs []descriptor.HiddenServiceDescriptor
-			var introsLen int
-			descs, introsLen, err = onion.fetchBackendDescriptors(context.Background())
+			descs, introsLen, err := onion.fetchBackendDescriptors(context.Background())
 			if !reflect.DeepEqual(err, tt.expectedErr) {
 				t.Errorf("expected %v got %v", tt.expectedErr, err)
 			}
@@ -415,9 +412,9 @@ func TestOnion_fetchBackendDescriptors(t *testing.T) {
 func TestOnion_singleDescriptorGenerateAndPublish(t *testing.T) {
 	t.Parallel()
 
-	var logger = common.NewNopLogger()
+	logger := common.NewNopLogger()
 
-	var testCases = []struct {
+	testCases := []struct {
 		name               string
 		controller         *MockController
 		backendDescriptors []descriptor.HiddenServiceDescriptor
@@ -518,7 +515,7 @@ func TestOnion_singleDescriptorGenerateAndPublish(t *testing.T) {
 			&MockController{},
 			[]descriptor.HiddenServiceDescriptor{*backendDescriptor1, *backendDescriptor2},
 			func() *rsa.PrivateKey {
-				var pri = *privateKey
+				pri := *privateKey
 				pri.E = 0
 				return &pri
 			}(),
@@ -538,11 +535,11 @@ func TestOnion_singleDescriptorGenerateAndPublish(t *testing.T) {
 	}
 
 	for _, tt := range testCases {
-		var tt = tt
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			var onion, err = NewOnion(tt.controller, []string{}, publicKey, tt.privateKey, nil, logger, common.NewTimeProvider(), 0)
+			onion, err := NewOnion(tt.controller, []string{}, publicKey, tt.privateKey, nil, logger, common.NewTimeProvider(), 0)
 			if err != nil {
 				t.Fatal("failed to create new onion")
 			}
@@ -552,8 +549,7 @@ func TestOnion_singleDescriptorGenerateAndPublish(t *testing.T) {
 				t.Errorf("expected %v got %v", tt.expectedErr, err)
 			}
 
-			var parsedDescriptor *descriptor.HiddenServiceDescriptor
-			parsedDescriptor, err = descriptor.ParseHiddenServiceDescriptor(tt.controller.PostedDescriptor)
+			parsedDescriptor, err := descriptor.ParseHiddenServiceDescriptor(tt.controller.PostedDescriptor)
 			if err != nil {
 				t.Fatal("failed to parse descriptor")
 			}
@@ -568,8 +564,8 @@ func TestOnion_singleDescriptorGenerateAndPublish(t *testing.T) {
 func TestOnion_multiDescriptorGenerateAndPublish(t *testing.T) {
 	t.Parallel()
 
-	var logger = common.NewNopLogger()
-	var hsdirFetcher = &MockHSDirFetcher{
+	logger := common.NewNopLogger()
+	hsdirFetcher := &MockHSDirFetcher{
 		returnResponsibleHSdirsMap: map[string][]descriptor.RouterStatusEntry{
 			"S43ALCS3QYEYC4XDY7TH2ZF7C7KVRXSE": {
 				{
@@ -602,10 +598,10 @@ func TestOnion_multiDescriptorGenerateAndPublish(t *testing.T) {
 		},
 	}
 
-	var mockTime = &common.MockTimeProvider{}
+	mockTime := &common.MockTimeProvider{}
 	mockTime.Set(time.Date(2019, time.January, 10, 1, 2, 3, 4, time.UTC))
 
-	var testCases = []struct {
+	testCases := []struct {
 		name               string
 		controller         *MockController
 		hsdirFetcher       *MockHSDirFetcher
@@ -1417,7 +1413,7 @@ func TestOnion_multiDescriptorGenerateAndPublish(t *testing.T) {
 			hsdirFetcher,
 			[]descriptor.HiddenServiceDescriptor{*backendDescriptorLong1, *backendDescriptorLong2},
 			func() *rsa.PrivateKey {
-				var pri = *privateKey
+				pri := *privateKey
 				pri.E = 0
 				return &pri
 			}(),
@@ -1449,11 +1445,11 @@ func TestOnion_multiDescriptorGenerateAndPublish(t *testing.T) {
 	}
 
 	for _, tt := range testCases {
-		var tt = tt
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			var onion, err = NewOnion(tt.controller, []string{}, publicKey, tt.privateKey, tt.hsdirFetcher, logger, mockTime, 0)
+			onion, err := NewOnion(tt.controller, []string{}, publicKey, tt.privateKey, tt.hsdirFetcher, logger, mockTime, 0)
 			if err != nil {
 				t.Fatal("failed to create new onion")
 			}
@@ -1464,12 +1460,12 @@ func TestOnion_multiDescriptorGenerateAndPublish(t *testing.T) {
 			}
 
 			for hsdir, postedDescriptor := range tt.controller.PostedDescriptors {
-				var parsedDescriptor, err = descriptor.ParseHiddenServiceDescriptor(postedDescriptor)
+				parsedDescriptor, err := descriptor.ParseHiddenServiceDescriptor(postedDescriptor)
 				if err != nil {
 					t.Fatal("failed to parse descriptor")
 				}
 
-				var expectedDescriptor, ok = tt.expectedDescriptorsIntrosRaw[hsdir]
+				expectedDescriptor, ok := tt.expectedDescriptorsIntrosRaw[hsdir]
 				if !ok {
 					t.Error("posted descriptor to incorrect hsdir")
 				}

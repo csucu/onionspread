@@ -43,12 +43,12 @@ type IntroductionPoint struct {
 }
 
 func ParseHiddenServiceDescriptor(descriptorRaw string) (*HiddenServiceDescriptor, error) {
-	var descriptor = &HiddenServiceDescriptor{}
-	var lines = strings.Split(descriptorRaw, "\n")
-	var err error
+	descriptor := &HiddenServiceDescriptor{}
+	lines := strings.Split(descriptorRaw, "\n")
 
+	var err error
 	for i, line := range lines {
-		var words = strings.Split(line, " ")
+		words := strings.Split(line, " ")
 		switch words[0] {
 		case "rendezvous-service-descriptor":
 			descriptor.DescriptorID = words[1]
@@ -62,8 +62,7 @@ func ParseHiddenServiceDescriptor(descriptorRaw string) (*HiddenServiceDescripto
 			descriptor.Published, err = time.Parse("2006-01-02 15:04:05", strings.Join(words[1:], " "))
 		case "protocol-versions":
 			for _, versionStr := range strings.Split(words[1], ",") {
-				var version int
-				version, err = strconv.Atoi(versionStr)
+				version, err := strconv.Atoi(versionStr)
 				if err != nil {
 					return nil, err
 				}
@@ -89,16 +88,15 @@ func ParseHiddenServiceDescriptor(descriptorRaw string) (*HiddenServiceDescripto
 func parseIntroductionPoints(data string) ([]IntroductionPoint, error) {
 	var introductionPoints []IntroductionPoint
 
-	var block, rest = pem.Decode([]byte(data))
+	block, rest := pem.Decode([]byte(data))
 	if len(rest) > 0 {
 		return introductionPoints, errors.New("trailing bytes when decoding introduction points PEM")
 	}
 
-	var raw = string(block.Bytes)
-	var EOF bool
-	var err error
-
+	raw := string(block.Bytes)
 	for {
+		var EOF bool
+		var err error
 		var introductionPoint *IntroductionPoint
 		introductionPoint, raw, EOF, err = extractIntroductionPoints(raw)
 		if err != nil {
@@ -121,7 +119,7 @@ func extractIntroductionPoints(data string) (*IntroductionPoint, string, bool, e
 		return nil, data, true, nil
 	}
 
-	var start = 0
+	start := 0
 	if !strings.HasPrefix(data, string("introduction-point")) {
 		start = strings.Index(data, string("introduction-point"))
 		if start < 0 {
@@ -129,9 +127,9 @@ func extractIntroductionPoints(data string) (*IntroductionPoint, string, bool, e
 		}
 	}
 
-	var end = strings.Index(data[start:], string("\nintroduction-point "))
+	end := strings.Index(data[start:], string("\nintroduction-point "))
 	if end >= 0 {
-		var introductionPoint, err = parseIntroductionPoint(data[start : start+end+1])
+		introductionPoint, err := parseIntroductionPoint(data[start : start+end+1])
 		if err != nil {
 			return nil, "", false, err
 		}
@@ -139,7 +137,7 @@ func extractIntroductionPoints(data string) (*IntroductionPoint, string, bool, e
 		return introductionPoint, data[start+end+1:], false, nil
 	}
 
-	var introductionPoint, err = parseIntroductionPoint(data[start:])
+	introductionPoint, err := parseIntroductionPoint(data[start:])
 	if err != nil {
 		return nil, "", false, err
 	}
@@ -149,12 +147,12 @@ func extractIntroductionPoints(data string) (*IntroductionPoint, string, bool, e
 
 // parseIntroductionPoint returns an introduction point object given its raw representation
 func parseIntroductionPoint(data string) (*IntroductionPoint, error) {
-	var introductionPoint = &IntroductionPoint{}
-	var lines = strings.Split(data, "\n")
+	introductionPoint := &IntroductionPoint{}
+	lines := strings.Split(data, "\n")
 	var err error
 
 	for i, line := range lines {
-		var words = strings.Split(line, " ")
+		words := strings.Split(line, " ")
 
 		switch words[0] {
 		case "introduction-point":
@@ -183,7 +181,7 @@ func parseIntroductionPoint(data string) (*IntroductionPoint, error) {
 }
 
 func extractEntry(end string, lines []string) (string, error) {
-	var entry = ""
+	entry := ""
 	for _, line := range lines[1:] {
 		entry += line
 		entry += "\n"
@@ -211,7 +209,7 @@ func GenerateDescriptorRaw(introductionPoints []IntroductionPoint, publishedTime
 		}
 	}
 
-	var timeUnix = publishedTime.Unix()
+	timeUnix := publishedTime.Unix()
 	if descriptorID == nil {
 		descriptorID, err = common.CalculateDescriptorID(permID, timeUnix, replica, deviation, descriptorCookie)
 		if err != nil {
@@ -220,20 +218,19 @@ func GenerateDescriptorRaw(introductionPoints []IntroductionPoint, publishedTime
 	}
 
 	// Public key bloc
-	var publicKeyBlock []byte
-	publicKeyBlock, err = createPublicKeyBloc(permanentKey)
+	publicKeyBlock, err := createPublicKeyBloc(permanentKey)
 	if err != nil {
 		return nil, fmt.Errorf("failed to calculate publicKeyBlock: %v", err)
 	}
 
 	// secret id
-	var secretIDPart = common.GetSecretID(permID, timeUnix, descriptorCookie, replica)
+	secretIDPart := common.GetSecretID(permID, timeUnix, descriptorCookie, replica)
 
 	// Introduction point block
-	var introBlock = createIntroductionPointsBloc(introductionPoints)
+	introBlock := createIntroductionPointsBloc(introductionPoints)
 
 	// Published time
-	var formattedTime = time.Unix(timeUnix-timeUnix%(60*60), 0).Format("2006-01-02 15:04:05")
+	formattedTime := time.Unix(timeUnix-timeUnix%(60*60), 0).Format("2006-01-02 15:04:05")
 
 	var b bytes.Buffer
 	b.WriteString("rendezvous-service-descriptor ")
@@ -250,8 +247,7 @@ func GenerateDescriptorRaw(introductionPoints []IntroductionPoint, publishedTime
 	b.WriteString("signature\n")
 
 	// Signature block
-	var signatureBlock []byte
-	signatureBlock, err = createSignatureBlock(b.Bytes(), privateKey)
+	signatureBlock, err := createSignatureBlock(b.Bytes(), privateKey)
 	if err != nil {
 		return nil, err
 	}
@@ -271,7 +267,7 @@ func createIntroductionPointsBloc(introductionPoints []IntroductionPoint) []byte
 }
 
 func createPublicKeyBloc(permanentKey *rsa.PublicKey) ([]byte, error) {
-	var der, err = asn1.Marshal(*permanentKey)
+	der, err := asn1.Marshal(*permanentKey)
 	if err != nil {
 		return nil, err
 	}
@@ -280,10 +276,10 @@ func createPublicKeyBloc(permanentKey *rsa.PublicKey) ([]byte, error) {
 }
 
 func createSignatureBlock(descriptor []byte, privateKey *rsa.PrivateKey) ([]byte, error) {
-	var h = sha1.New()
+	h := sha1.New()
 	h.Write(descriptor)
 
-	var signature, err = privateKey.Sign(rand.Reader, h.Sum(nil), crypto.Hash(0))
+	signature, err := privateKey.Sign(rand.Reader, h.Sum(nil), crypto.Hash(0))
 	if err != nil {
 		return nil, fmt.Errorf("failed to sign descriptor: %v", err)
 	}

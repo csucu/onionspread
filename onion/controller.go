@@ -30,10 +30,10 @@ func (c *Controller) FetchHiddenServiceDescriptor(address, server string, ctx co
 	c.mux.Lock()
 	defer c.mux.Unlock()
 
-	var eventCh = make(chan control.Event)
+	eventCh := make(chan control.Event)
 	defer close(eventCh)
 
-	var err = c.conn.AddEventListener(eventCh, control.EventCodeHSDescContent)
+	err := c.conn.AddEventListener(eventCh, control.EventCodeHSDescContent)
 	if err != nil {
 		return nil, err
 	}
@@ -45,10 +45,10 @@ func (c *Controller) FetchHiddenServiceDescriptor(address, server string, ctx co
 	}
 
 	// Grab events
-	var eventCtx, eventCancel = context.WithTimeout(ctx, 45*time.Second)
+	eventCtx, eventCancel := context.WithTimeout(ctx, 45*time.Second)
 	defer eventCancel()
 
-	var errCh = make(chan error, 1)
+	errCh := make(chan error, 1)
 
 	go func() { errCh <- c.conn.HandleEvents(eventCtx) }()
 	for {
@@ -75,7 +75,7 @@ func (c *Controller) PostHiddenServiceDescriptor(desc string, servers []string, 
 
 // FetchRouterStatusEntries requests the router status info from the controller
 func (c *Controller) FetchRouterStatusEntries() ([]descriptor.RouterStatusEntry, error) {
-	var data, err = c.conn.GetInfo("ns/all")
+	data, err := c.conn.GetInfo("ns/all")
 	if err != nil {
 		return nil, fmt.Errorf("error fetching RouterStatusEntries: %v", err)
 	}
@@ -95,13 +95,13 @@ func (c *Controller) Close() error {
 
 // NewController constructs a new controller
 func NewController(address, controlPortPassword string) (*Controller, error) {
-	var textprotoConn, err = textproto.Dial("tcp", address)
+	textprotoConn, err := textproto.Dial("tcp", address)
 	if err != nil {
 		return nil, fmt.Errorf("dial error: %v", err)
 	}
 
 	// Connect to tor controller
-	var conn = control.NewConn(textprotoConn)
+	conn := control.NewConn(textprotoConn)
 	if err = conn.Authenticate(controlPortPassword); err != nil {
 		return nil, fmt.Errorf("authentication error: %v", err)
 	}

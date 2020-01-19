@@ -132,7 +132,6 @@ var (
 )
 
 func TestMain(m *testing.M) {
-	var err error
 	descriptorBytes, err := ioutil.ReadFile("../testdata/desc.txt")
 	if err != nil {
 		fmt.Printf("TestMain: %v\n", err.Error())
@@ -169,7 +168,7 @@ func TestMain(m *testing.M) {
 func TestParseHiddenServiceDescriptor(t *testing.T) {
 	t.Parallel()
 
-	var got, err = ParseHiddenServiceDescriptor(testDescriptorRaw)
+	got, err := ParseHiddenServiceDescriptor(testDescriptorRaw)
 	if err != nil {
 		t.Fatalf("failed to parse hidden service descriptor: %v", err)
 	}
@@ -180,7 +179,7 @@ func TestParseHiddenServiceDescriptor(t *testing.T) {
 }
 
 func TestParseIntroductionPoints(t *testing.T) {
-	var got, err = parseIntroductionPoints(descriptor.IntroductionPointsRaw)
+	got, err := parseIntroductionPoints(descriptor.IntroductionPointsRaw)
 	if err != nil {
 		t.Fatalf("failed to parse introduction points: %v", err.Error())
 	}
@@ -193,7 +192,7 @@ func TestParseIntroductionPoints(t *testing.T) {
 func TestExtractIntroductionPoints(t *testing.T) {
 	t.Parallel()
 
-	var testCases = []struct {
+	testCases := []struct {
 		name                  string
 		input                 string
 		wantIntroductionPoint *IntroductionPoint
@@ -275,11 +274,11 @@ func TestExtractIntroductionPoints(t *testing.T) {
 	}
 
 	for _, tt := range testCases {
-		var tt = tt
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			var introductionPoint, data, EOF, err = extractIntroductionPoints(tt.input)
+			introductionPoint, data, EOF, err := extractIntroductionPoints(tt.input)
 			if err != nil {
 				t.Fatalf("failed to extract introduction points: %v", err)
 			}
@@ -302,7 +301,7 @@ func TestExtractIntroductionPoints(t *testing.T) {
 func TestParseIntroductionPoint(t *testing.T) {
 	t.Parallel()
 
-	var input = "introduction-point 6zmzbqr2wal2ynzcn2zk2pnfvdvokxim\n" +
+	input := "introduction-point 6zmzbqr2wal2ynzcn2zk2pnfvdvokxim\n" +
 		"ip-address 91.221.119.33\n" +
 		"onion-port 443\n" +
 		"onion-key\n" +
@@ -318,7 +317,7 @@ func TestParseIntroductionPoint(t *testing.T) {
 		"sGgEGymm25g/zovNKexwpP+Qe3H3fUoGjEByesREzFHOdMjt25kvAgMBAAE=\n" +
 		"-----END RSA PUBLIC KEY-----\n"
 
-	var got, err = parseIntroductionPoint(input)
+	got, err := parseIntroductionPoint(input)
 	if err != nil {
 		t.Fatalf("failed to parse hidden service introduction point: %v", err)
 	}
@@ -329,14 +328,14 @@ func TestParseIntroductionPoint(t *testing.T) {
 }
 
 func TestCreateIntroductionPointsBloc(t *testing.T) {
-	var gotBytes = createIntroductionPointsBloc(descriptor.IntroductionPoints)
+	gotBytes := createIntroductionPointsBloc(descriptor.IntroductionPoints)
 	if got := string(gotBytes); !reflect.DeepEqual(descriptor.IntroductionPointsRaw, got) {
 		t.Errorf("expected %#v got %#v", descriptor.IntroductionPointsRaw, got)
 	}
 }
 
 func TestCreatePublicKeyBloc(t *testing.T) {
-	var blocBytes, err = createPublicKeyBloc(pubKey)
+	blocBytes, err := createPublicKeyBloc(pubKey)
 	if err != nil {
 		t.Fatal("failed to create public key bloc")
 	}
@@ -347,15 +346,14 @@ func TestCreatePublicKeyBloc(t *testing.T) {
 }
 
 func TestGenerateDescriptorRaw(t *testing.T) {
-	var pubTime = time.Unix(time.Now().Unix()%(60*60), 0)
-	var descRaw, err = GenerateDescriptorRaw(descriptor.IntroductionPoints, pubTime, 1, 0,
+	pubTime := time.Unix(time.Now().Unix()%(60*60), 0)
+	descRaw, err := GenerateDescriptorRaw(descriptor.IntroductionPoints, pubTime, 1, 0,
 		"", pubKey, priKey, nil, nil)
 	if err != nil {
 		t.Fatalf("failed to generate descriptor: %v", err)
 	}
 
-	var desc *HiddenServiceDescriptor
-	desc, err = ParseHiddenServiceDescriptor(string(descRaw))
+	desc, err := ParseHiddenServiceDescriptor(string(descRaw))
 
 	if desc.PermanentKey != descriptor.PermanentKey {
 		t.Errorf("expected PermanentKey %s got %s", descriptor.PermanentKey, desc.PermanentKey)
@@ -370,10 +368,10 @@ func TestGenerateDescriptorRaw(t *testing.T) {
 	}
 
 	// verify signature
-	var h = sha1.New()
+	h := sha1.New()
 	h.Write(descRaw[:bytes.Index(descRaw, []byte("signature"))+10])
 
-	var signatureBlock, rest = pem.Decode([]byte(desc.Signature))
+	signatureBlock, rest := pem.Decode([]byte(desc.Signature))
 	if signatureBlock == nil || len(rest) < 0 {
 		t.Fatal("failed to decode pem encoded signature")
 	}

@@ -36,7 +36,7 @@ type HSDirFetcher struct {
 
 // update refreshes the internal list of hsdirs
 func (f *HSDirFetcher) update() error {
-	var routerEntries, err = f.controller.FetchRouterStatusEntries()
+	routerEntries, err := f.controller.FetchRouterStatusEntries()
 	if err != nil {
 		return err
 	}
@@ -62,12 +62,12 @@ func (f *HSDirFetcher) update() error {
 
 // CalculateResponsibleHSDirs returns the responsible hsdirs given a descriptor ID
 func (f *HSDirFetcher) CalculateResponsibleHSDirs(descriptorID string) ([]descriptor.RouterStatusEntry, error) {
-	var decoded, err = base32.StdEncoding.DecodeString(descriptorID)
+	decoded, err := base32.StdEncoding.DecodeString(descriptorID)
 	if err != nil {
 		return nil, fmt.Errorf("failed to decode descriptor id: %v", err)
 	}
 
-	var descHex = strings.ToUpper(strings.TrimSpace(hex.EncodeToString(decoded)))
+	descHex := strings.ToUpper(strings.TrimSpace(hex.EncodeToString(decoded)))
 
 	var responsibleHSDirs []descriptor.RouterStatusEntry
 	var nAdded int
@@ -75,13 +75,13 @@ func (f *HSDirFetcher) CalculateResponsibleHSDirs(descriptorID string) ([]descri
 	f.hsDirsLock.RLock()
 	defer f.hsDirsLock.RUnlock()
 
-	var HSDirsSize = len(f.hsDirs)
-	var startIndex = sort.Search(HSDirsSize, func(i int) bool { return f.hsDirs[i].Fingerprint >= descHex })
+	HSDirsSize := len(f.hsDirs)
+	startIndex := sort.Search(HSDirsSize, func(i int) bool { return f.hsDirs[i].Fingerprint >= descHex })
 	if startIndex == HSDirsSize {
 		startIndex = 0
 	}
 
-	var currentIndex = startIndex
+	currentIndex := startIndex
 	for nAdded < numberOfConsecutiveReplicas {
 		// add a check to see if we've already added
 		responsibleHSDirs = append(responsibleHSDirs, f.hsDirs[currentIndex])
@@ -104,7 +104,7 @@ func (f *HSDirFetcher) CalculateResponsibleHSDirs(descriptorID string) ([]descri
 func (f *HSDirFetcher) Start() error {
 	f.logger.Debug("hsdir_fetcher: starting")
 
-	var err = f.update()
+	err := f.update()
 	if err != nil {
 		return err
 	}
@@ -130,20 +130,20 @@ func (f *HSDirFetcher) Stop() {
 // listen listens for status general events from the tor controller
 // when it receives the event it updates its internal hsdir list
 func (f *HSDirFetcher) listen() error {
-	var eventCh = make(chan control.Event)
+	eventCh := make(chan control.Event)
 	defer close(eventCh)
 
-	var err = f.controller.GetConn().AddEventListener(eventCh, control.EventCodeStatusGeneral)
+	err := f.controller.GetConn().AddEventListener(eventCh, control.EventCodeStatusGeneral)
 	if err != nil {
 		return err
 	}
 	defer f.controller.GetConn().RemoveEventListener(eventCh, control.EventCodeStatusGeneral)
 
 	// Grab events
-	var eventCtx = context.Background()
+	eventCtx := context.Background()
 	defer eventCtx.Done()
 
-	var errCh = make(chan error, 1)
+	errCh := make(chan error, 1)
 
 	go func() { errCh <- f.controller.GetConn().HandleEvents(eventCtx) }()
 	for {
@@ -159,7 +159,7 @@ func (f *HSDirFetcher) listen() error {
 			//return nil, err
 		case event := <-eventCh:
 			f.logger.Debug("hsdir_fetcher: got a new event")
-			var statusEvent = event.(*control.StatusEvent)
+			statusEvent := event.(*control.StatusEvent)
 			if statusEvent.Code() == control.EventCodeStatusGeneral {
 				f.logger.Debug("hsdir_fetcher: event is a status general event, updating")
 				err = f.update()

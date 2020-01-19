@@ -25,7 +25,7 @@ func TestMain(m *testing.M) {
 func TestBase64ToHex(t *testing.T) {
 	t.Parallel()
 
-	var testCases = []struct {
+	testCases := []struct {
 		name  string
 		input string
 		want  string
@@ -46,11 +46,11 @@ func TestBase64ToHex(t *testing.T) {
 	}
 
 	for _, tt := range testCases {
-		var tt = tt
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			var got, err = Base64ToHex(tt.input)
+			got, err := Base64ToHex(tt.input)
 			if !reflect.DeepEqual(err, tt.err) {
 				t.Errorf("expected %v got %v", tt.err, got)
 			}
@@ -63,13 +63,12 @@ func TestBase64ToHex(t *testing.T) {
 }
 
 func TestCalculateDescriptorID(t *testing.T) {
-	var permID, err = base32.StdEncoding.DecodeString(strings.ToUpper("facebookcorewwwi"))
+	permID, err := base32.StdEncoding.DecodeString(strings.ToUpper("facebookcorewwwi"))
 	if err != nil {
 		t.Fatalf("failed to calculate permanent id: %v", err)
 	}
 
-	var got []byte
-	got, err = CalculateDescriptorID(permID, 1435229421, 0, 0, "")
+	got, err := CalculateDescriptorID(permID, 1435229421, 0, 0, "")
 	if err != nil {
 		t.Fatalf("failed to calculate descriptor id: %v", err)
 	}
@@ -80,7 +79,7 @@ func TestCalculateDescriptorID(t *testing.T) {
 }
 
 func TestGetTimePeriod(t *testing.T) {
-	var got = getTimePeriod(1435229421, 0, []byte{40, 4, 64, 185, 202, 19, 162, 75, 90, 200}) // serviceID Bytes for "facebookcorewwwi"
+	got := getTimePeriod(1435229421, 0, []byte{40, 4, 64, 185, 202, 19, 162, 75, 90, 200}) // serviceID Bytes for "facebookcorewwwi"
 
 	if want := int64(16611); want != got {
 		t.Errorf("expected %v got %v", want, got)
@@ -88,8 +87,8 @@ func TestGetTimePeriod(t *testing.T) {
 }
 
 func TestGetSecretIDPartBytes(t *testing.T) {
-	var got = getSecretID([]byte{40, 4, 64, 185, 202, 19, 162, 75, 90, 200}, 1435229421, "", 0)
-	var want = []byte{160, 216, 228, 236, 154, 194, 138, 255, 237, 79, 168, 40, 232, 114, 124, 127, 212, 171, 73, 48}
+	got := getSecretID([]byte{40, 4, 64, 185, 202, 19, 162, 75, 90, 200}, 1435229421, "", 0)
+	want := []byte{160, 216, 228, 236, 154, 194, 138, 255, 237, 79, 168, 40, 232, 114, 124, 127, 212, 171, 73, 48}
 
 	if !reflect.DeepEqual(want, got) {
 		t.Errorf("expected %v got %v", want, got)
@@ -97,14 +96,14 @@ func TestGetSecretIDPartBytes(t *testing.T) {
 }
 
 func TestLoadKeysFromFile(t *testing.T) {
-	var _, _, err = LoadKeysFromFile("../testdata/rsaKey")
+	_, _, err := LoadKeysFromFile("../testdata/rsaKey")
 	if err != nil {
 		t.Fatalf("failed to load public key from file: %v", err)
 	}
 }
 
 func TestCalculatePermanentID(t *testing.T) {
-	var got, err = CalculatePermanentID(*rsaKey)
+	got, err := CalculatePermanentID(*rsaKey)
 	if err != nil {
 		t.Errorf("failed to calculate permanent id: %v", err)
 	}
@@ -115,14 +114,14 @@ func TestCalculatePermanentID(t *testing.T) {
 }
 
 func TestCalculateOnionAddress(t *testing.T) {
-	var want = "7ctbljpgkiayaita"
+	want := "7ctbljpgkiayaita"
 	if got := CalculateOnionAddress([]byte{248, 166, 21, 165, 230, 82, 1, 128, 34, 96}); got != want {
 		t.Errorf("expected %v got %v", want, got)
 	}
 }
 
 func TestDescriptorIDValidUntil(t *testing.T) {
-	var permID, err = CalculatePermanentID(*rsaKey)
+	permID, err := CalculatePermanentID(*rsaKey)
 	if err != nil {
 		t.Fatalf("failed to calculate permanent id: %v", err)
 	}
